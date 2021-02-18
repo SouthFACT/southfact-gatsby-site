@@ -1,5 +1,5 @@
 backend:
-  name: git-gateway
+  name: github
   branch: master
   repo: SouthFACT/southfact-gatsby-site 
   base_url: https://vine-spangled-ocicat.glitch.me
