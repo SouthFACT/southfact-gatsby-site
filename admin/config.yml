@@ -1,7 +1,7 @@
 backend:
   name: git-gateway
-  repo: southfact/southfact-gatsby-site
   branch: master
+  repo: southfact/southfact-gatsby-site
   base_url: https://vine-spangled-ocicat.glitch.me
   commit_messages:
     create: 'Create {{collection}} “{{slug}}”'
@@ -18,8 +18,8 @@ public_folder: /img
 
 # uncomment out publish_mode when/if we can figure out how to implement it with a draft site and prod site
 # publish_mode: editorial_workflow 
-site_url: https://southfact.github.io/southfact-gatsby-site/
-display_url: https://southfact.github.io/southfact-gatsby-site/
+# site_url: https://southfact.github.io/southfact-gatsby-site/
+# display_url: https://southfact.github.io/southfact-gatsby-site/
 
 collections:
   - name: "pages"
