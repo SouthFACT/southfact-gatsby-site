@@ -1,7 +1,7 @@
 backend:
   name: git-gateway
   branch: master
-  repo: southfact/southfact-gatsby-site
+  repo: SouthFACT/southfact-gatsby-site 
   base_url: https://vine-spangled-ocicat.glitch.me
   commit_messages:
     create: 'Create {{collection}} “{{slug}}”'
