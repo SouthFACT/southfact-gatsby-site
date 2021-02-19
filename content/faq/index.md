@@ -1,12 +1,12 @@
 ---
-templateKey: 'faq'
+templateKey: faq
 title: Frequently Asked Questions (FAQS)
-date: '2019-05-31'
+date: 2019-05-31
 description: Frequently Asked Questions
 ---
 ## Are there costs associated with using the SouthFACT applications?
 
-Testing this out.
+Hello World!
 
 ## If I create an account, will my contact information be distributed in any way?
 
