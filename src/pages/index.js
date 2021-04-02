@@ -7,7 +7,6 @@ import Link from '../components/Link';
 import Layout from "../components/layout"
 
 export default function IndexPage({ data }) {
-
   return (
     <Layout>
       <Typography variant="h3" align='center'>
@@ -40,7 +39,7 @@ export default function IndexPage({ data }) {
         <Grid item sm={3} xs={12}>
           <Card 
             content="Identify change for specific areas and times"
-            href="https://code.earthengine.google.com/5513af5039ed666eda62492d0d7b7e9d?hideCode=true"
+            href={data.site.siteMetadata.customRequestLink}
             linkText="Create Custom Requests"
           />
         </Grid>
@@ -59,8 +58,9 @@ export const query = graphql`
   query {
     site {
       siteMetadata {
-        title
         description
+        title
+        customRequestLink
       }
     }
   }

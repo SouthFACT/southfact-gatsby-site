@@ -43,6 +43,7 @@ export default function ButtonAppBar() {
         site {
           buildTime(formatString: "YYYY-MM-DD HH:mm:ss z")
           siteMetadata {
+            customRequestLink
             description
             githubRepo
           }
@@ -103,7 +104,7 @@ export default function ButtonAppBar() {
           <Button className={classes.button} size='large' color='inherit' href="https://southfact.github.io/southfact-map-v2/dist/#Home">
             Map
           </Button>
-          <Button className={classes.button} size='large' color='inherit' href="https://code.earthengine.google.com/1da048b621d2dced56eaf20e4241c7f6?hideCode=true">
+          <Button className={classes.button} size='large' color='inherit' href={data.site.siteMetadata.customRequestLink}>
             Custom Requests
           </Button>
           <Button
