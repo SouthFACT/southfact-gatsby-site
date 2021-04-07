@@ -1,6 +1,7 @@
 /* Only use global css when absolutely necessary. There are better ways to style components.
 See https://www.gatsbyjs.com/docs/styling/ for more information on some better ways */
 
+/* This is a good and easy way to get the anchor tags the right color in generated markdown content*/
 a {
   color: #BEC230
 }
