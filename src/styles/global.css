@@ -1,6 +1,6 @@
-/* Only use global css when absolutely necessary. There are better ways to style components
+/* Only use global css when absolutely necessary. There are better ways to style components.
 See https://www.gatsbyjs.com/docs/styling/ for more information on some better ways */
 
 a {
-  color: #BEC230c
+  color: #BEC230C
 }
