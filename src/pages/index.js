@@ -32,7 +32,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function IndexPage({ data }) {
-
   const classes = useStyles({});
 
   return (
@@ -51,7 +50,7 @@ export default function IndexPage({ data }) {
         <Grid item md={4} sm={12} xs={12} className={classes.tagline}>
           <Box fontWeight="fontWeightBold" py={0} display='flex' justifyContent='center' >
             <Typography variant="h5" align='center'>
-              Tools to identify and quantifychanges in southern forests.
+              Tools to identify and quantify changes in southern forests.
             </Typography>
           </Box>
         </Grid>

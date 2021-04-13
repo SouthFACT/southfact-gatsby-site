@@ -9,7 +9,7 @@ export default function Contact() {
           Contact
         </Typography>
         <Typography variant="h5">
-          If you have any questions, comments, or concerns please send an email to <a href='mailto:info@southfact.com'>info@southfact.com</a> 
+          If you have any questions, comments, or concerns please send an email to <a href='mailto:info@southfact.com'>info@southfact.com</a>
         </Typography>
       </Layout>
     )
