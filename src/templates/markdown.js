@@ -15,8 +15,14 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '1rem',
     fontWeight: 400,
     lineHeight: 1.5,
-    letterSpacing: '0.00938em'
+    letterSpacing: '0.00938em',
+    paddingTop: theme.spacing(1),
   },
+  title: {
+    justifyContent: 'center',
+    paddingTop: theme.spacing(2),
+    paddingBottom: theme.spacing(0),
+  }
 }));
 
 export default function FaqTemplate(props) {
@@ -26,10 +32,14 @@ export default function FaqTemplate(props) {
   return (
     <Layout>
       <Grid container className={classes.container}>
-        <Typography variant="h3">
-          {page.frontmatter.title}
-        </Typography>
-         <Box className={classes.content}>
+        <Grid item xs={12} className={classes.title}>
+          <Box fontWeight="fontWeightBold" py={0} display='flex' justifyContent='flex-start' >
+          <Typography variant="h3">
+            {page.frontmatter.title}
+          </Typography>
+        </Box>
+      </Grid>
+        <Box className={classes.content}>
           <div dangerouslySetInnerHTML={{ __html: page.html }}  />
         </Box>
       </Grid>

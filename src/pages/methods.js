@@ -14,7 +14,8 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '1rem',
     fontWeight: 400,
     lineHeight: 1.5,
-    letterSpacing: '0.00938em'
+    letterSpacing: '0.00938em',
+    paddingTop: theme.spacing(1),
   },
   title: {
     justifyContent: 'center',
@@ -36,8 +37,8 @@ export default function Methods() {
             </Typography>
           </Box>
         </Grid>
-        <Grid item xs={12} className={classes.title}>
-          <Box className={classes.content}>
+        <Grid item xs={12} className={classes.content}>
+          <Box>
             Placeholder for Methods
           </Box>
         </Grid>
