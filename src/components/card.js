@@ -10,8 +10,7 @@ const useStyles = makeStyles((theme) => ({
   card: {
     minHeight: '150px',
     margin: theme.spacing(2),
-    backgroundColor: '#101012',
-    borderRadius: '8px'
+    backgroundColor: '#101012'
   },
   cardBody: {
     display: 'flex',
@@ -26,8 +25,7 @@ const useStyles = makeStyles((theme) => ({
   cardButton: {
     width: '100%',
     marginLeft: theme.spacing(2),
-    marginRight: theme.spacing(2),
-    borderRadius: '24px'
+    marginRight: theme.spacing(2)
   }
 }));
 

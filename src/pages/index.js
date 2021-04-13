@@ -17,8 +17,8 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(0),
   },
   tagline: {
-    paddingTop: theme.spacing(4),
-    paddingBottom: theme.spacing(4),
+    paddingTop: theme.spacing(2),
+    paddingBottom: theme.spacing(8),
     [theme.breakpoints.down('xs')]: {
       paddingBottom: theme.spacing(4),
     }
@@ -74,7 +74,7 @@ export default function IndexPage({ data }) {
         <Grid item xl={2} lg={3} md={3} sm={12} xs={12}>
           <Card
             content="Learn more about the tools and this site"
-            linkText='about'
+            linkText='About'
             href='/about'
           />
         </Grid>

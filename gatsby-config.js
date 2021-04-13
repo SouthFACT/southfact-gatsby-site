@@ -29,6 +29,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-relative-images`,
             resolve: `gatsby-plugin-netlify-cms-paths`,
+            resolve: `gatsby-remark-autolink-headers`,
           },
           {
             resolve: `gatsby-remark-images`,
@@ -39,7 +40,7 @@ module.exports = {
               linkImagesToOriginal: true,
             },
           },
-          
+
         ],
       },
     },
