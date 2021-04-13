@@ -9,7 +9,8 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles((theme) => ({
   card: {
     minHeight: '150px',
-    margin: theme.spacing(2)
+    margin: theme.spacing(2),
+    backgroundColor: '#101012',
   },
   cardBody: {
     display: 'flex',

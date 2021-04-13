@@ -3,15 +3,9 @@ import { graphql } from 'gatsby'
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Card from '../components/card'
-import Link from '../components/Link';
 import Layout from "../components/layout"
 import Box from '@material-ui/core/Box';
-
-import {
-  makeStyles,
-  createMuiTheme,
-  MuiThemeProvider
-} from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -23,12 +17,12 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(0),
   },
   tagline: {
-    paddingTop: theme.spacing(0.25),
-    paddingBottom: theme.spacing(8),
+    paddingTop: theme.spacing(4),
+    paddingBottom: theme.spacing(4),
     [theme.breakpoints.down('xs')]: {
       paddingBottom: theme.spacing(4),
     }
-  },
+  }
 }));
 
 export default function IndexPage({ data }) {
