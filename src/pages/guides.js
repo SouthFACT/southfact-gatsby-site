@@ -13,10 +13,10 @@ export default function guides({
 }) {
   const { allMarkdownRemark } = data
   const page = allMarkdownRemark.edges
-    .map (edge =>
-      <React.Fragment>
+    .map ((edge, i) => (
+      <React.Fragment key={i}>
         <ListItem alignItems="flex-start">
-          <ListItemText>
+          <ListItemText >
             {edge.node.frontmatter.title}
             <Video
               videoSrcURL={edge.node.frontmatter.videoSourceURL}
@@ -24,9 +24,9 @@ export default function guides({
             />
           </ListItemText>
         </ListItem>
-        <Divider variant="inset" component="li" />
+        <Divider variant="inset" component="li"/>
       </React.Fragment>
-    )
+    ))
   return (
     <Layout>
       <Typography variant="h3">
@@ -36,7 +36,7 @@ export default function guides({
         {page}
       </List>
     </Layout>
-  ) 
+  )
 }
 
 export const pageQuery = graphql`
@@ -54,4 +54,4 @@ export const pageQuery = graphql`
       }
     }
   }
-` 
+`

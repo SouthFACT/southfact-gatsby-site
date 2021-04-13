@@ -16,8 +16,8 @@ export default function guides({
 }) {
   const { allMarkdownRemark } = data
   const page = allMarkdownRemark.edges
-    .map (edge =>
-      <React.Fragment>
+    .map ((edge, i) => (
+      <React.Fragment key={i}>
         <ListItem alignItems="flex-start">
           <ListItemAvatar>
             <Avatar variant="square" alt="CS" src={edge.node.frontmatter.linkImage.publicURL} />
@@ -30,7 +30,7 @@ export default function guides({
         </ListItem>
         <Divider variant="inset" component="li" />
       </React.Fragment>
-    )
+    ))
   return (
     <Layout>
       <Typography variant="h3">
@@ -40,7 +40,7 @@ export default function guides({
         {page}
       </List>
     </Layout>
-  ) 
+  )
 }
 
 export const pageQuery = graphql`
@@ -62,4 +62,4 @@ export const pageQuery = graphql`
       }
     }
   }
-` 
+`

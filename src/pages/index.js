@@ -54,26 +54,32 @@ export default function IndexPage({ data }) {
         container
         justify="center"
       >
-        <Grid item md={4} sm={12} xs={12}>
+        <Grid item xl={3} lg={1} md={1} sm={12} xs={12}>
+          &nbsp;
+        </Grid>
+        <Grid item xl={2} lg={3} md={3} sm={12} xs={12}>
           <Card
           content="View recent and historical changes on a map"
           href="https://southfact.github.io/southfact-map-v2/dist/#Home"
           linkText="Forest Change Viewer"
           />
         </Grid>
-        <Grid item md={4} sm={12} xs={12}>
+        <Grid item xl={2} lg={3} md={3} sm={12} xs={12}>
           <Card
             content="Create forest change products for a specific area and time"
             href={data.site.siteMetadata.customRequestLink}
             linkText="Create Custom Requests"
           />
         </Grid>
-        <Grid item md={4} sm={12} xs={12}>
+        <Grid item xl={2} lg={3} md={3} sm={12} xs={12}>
           <Card
             content="Learn more about the tools and this site"
             linkText='about'
             href='/about'
           />
+        </Grid>
+        <Grid item xl={3} lg={1} md={1} sm={12} xs={12}>
+          &nbsp;
         </Grid>
       </Grid>
     </Layout>
