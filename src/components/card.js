@@ -11,6 +11,7 @@ const useStyles = makeStyles((theme) => ({
     minHeight: '150px',
     margin: theme.spacing(2),
     backgroundColor: '#101012',
+    borderRadius: '8px'
   },
   cardBody: {
     display: 'flex',
@@ -25,7 +26,8 @@ const useStyles = makeStyles((theme) => ({
   cardButton: {
     width: '100%',
     marginLeft: theme.spacing(2),
-    marginRight: theme.spacing(2)
+    marginRight: theme.spacing(2),
+    borderRadius: '24px'
   }
 }));
 
@@ -40,10 +42,7 @@ function SimpleCard({ content, href, linkText }) {
         </Typography>
       </CardContent>
       <CardActions className={classes.cardActions}>
-        <Button
-          href={href}
-           className={classes.cardButton}
-        >
+        <Button href={href} className={classes.cardButton}>
           {linkText}
         </Button>
       </CardActions>

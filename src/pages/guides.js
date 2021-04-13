@@ -1,40 +1,103 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { makeStyles } from '@material-ui/core/styles';
 import Layout from "../components/layout"
 import Typography from '@material-ui/core/Typography';
-import Video from "../components/video"
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import Divider from '@material-ui/core/Divider';
-import ListItemText from '@material-ui/core/ListItemText';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Button from '@material-ui/core/Button';
+import Box from '@material-ui/core/Box';
+import Grid from '@material-ui/core/Grid';
+import YouTubeIcon from '@material-ui/icons/YouTube';
 
-export default function guides({
-  data, // this prop will be injected by the GraphQL query below.
-}) {
+const useStyles = makeStyles((theme) => ({
+  root: {
+    width: '50%',
+    minHeight: '350px',
+    backgroundColor: '#101012',
+    border: '2px solid #101012',
+    [theme.breakpoints.down('xs')]: {
+      width: '100%',
+      marginLeft: '0',
+    },
+    marginBottom: theme.spacing(6)
+  },
+  media: {
+    width: '100%',
+    height: '250px',
+    border: '0px solid transparent'
+  },
+  container: {
+    paddingLeft: theme.spacing(4),
+    paddingRight: theme.spacing(4)
+  },
+  content: {
+    fontSize: '1rem',
+    fontWeight: 400,
+    lineHeight: 1.5,
+    letterSpacing: '0.00938em',
+    paddingTop: theme.spacing(1),
+    flexDirection: "column",
+  },
+  cardButton: {
+    // width: '50%',
+    justifyContent: 'flex-start'
+  }
+}))
+
+export default function Guides({ data }) {
   const { allMarkdownRemark } = data
-  const page = allMarkdownRemark.edges
-    .map ((edge, i) => (
-      <React.Fragment key={i}>
-        <ListItem alignItems="flex-start">
-          <ListItemText >
+  const classes = useStyles();
+
+  const videoCard = allMarkdownRemark.edges.map ((edge, i) => (
+      <Card className={classes.root} key={i}>
+        <CardMedia
+          className={classes.media}
+          component='iframe'
+          alt={edge.node.frontmatter.title}
+          title={edge.node.frontmatter.title}
+          image={edge.node.frontmatter.videoSourceURL}
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="h2">
             {edge.node.frontmatter.title}
-            <Video
-              videoSrcURL={edge.node.frontmatter.videoSourceURL}
-              videoTitle={edge.node.frontmatter.videoTitle}
-            />
-          </ListItemText>
-        </ListItem>
-        <Divider variant="inset" component="li"/>
-      </React.Fragment>
-    ))
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            {edge.node.frontmatter.description}
+          </Typography>
+        </CardContent>
+      <CardActions>
+        <Button
+          variant="outlined"
+          target="_blank"
+          href={edge.node.frontmatter.videoSourceURL}
+          startIcon={<YouTubeIcon />}
+          className={classes.cardButton}
+        >
+          Watch on YouTube
+        </Button>
+      </CardActions>
+    </Card>
+  ));
+
   return (
     <Layout>
-      <Typography variant="h3">
-        Guides
-      </Typography>
-      <List>
-        {page}
-      </List>
+      <Grid container className={classes.container}>
+        <Grid item xs={12} className={classes.title}>
+          <Box fontWeight="fontWeightBold" py={0} display='flex' justifyContent='flex-start' >
+            <Typography variant="h3">
+              Guides
+            </Typography>
+          </Box>
+        </Grid>
+        <Grid item xs={12} >
+          <Box width='100%' display='flex' justifyContent='center' directon='column' className={classes.content} >
+            {videoCard}
+          </Box>
+        </Grid>
+      </Grid>
     </Layout>
   )
 }
@@ -48,6 +111,7 @@ export const pageQuery = graphql`
             title
             videoSourceURL
             videoTitle
+            description
             order
           }
         }
