@@ -1,16 +1,14 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { makeStyles } from '@material-ui/core/styles';
-import Layout from "../components/layout"
+import Layout from "../components/layout";
 import Typography from '@material-ui/core/Typography';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
+import Accordion from '@material-ui/core/Accordion';
+import AccordionSummary from '@material-ui/core/AccordionSummary';
+import AccordionDetails from '@material-ui/core/AccordionDetails';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
-import YouTubeIcon from '@material-ui/icons/YouTube';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,38 +31,16 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: theme.spacing(4),
     paddingRight: theme.spacing(4)
   },
-  content: {
-    fontSize: '1rem',
-    fontWeight: 400,
-    lineHeight: 1.5,
-    letterSpacing: '0.00938em',
-    paddingTop: theme.spacing(1),
-    flexDirection: "column",
+  question: {
+    fontSize: theme.typography.pxToRem(20),
+    fontWeight: theme.typography.fontWeightBold,
   },
-  faqlist: {
-    fontSize: '1.25rem',
-    fontWeight: 500,
-    lineHeight: 1.5,
-    paddingTop: theme.spacing(1),
+  answer: {
+    fontSize: theme.typography.pxToRem(18),
+    fontWeight: theme.typography.fontWeightRegular,
   },
-  faqAnswers: {
-    paddingTop: theme.spacing(1),
-    paddingBottom: theme.spacing(2),
-  },
-  questions: {
-    fontSize: '1.25rem',
-    fontWeight: 'bold',
-    lineHeight: 1.5,
-    paddingTop: theme.spacing(1),
-  },
-  titleAnswers: {
-    paddingTop: theme.spacing(2),
-  },
-  answers: {
-    fontSize: '1rem',
-    fontWeight: 'normal',
-    lineHeight: 1.5,
-    paddingTop: theme.spacing(1),
+  questionandanswer: {
+    marginBottom: theme.spacing(3)
   }
 }))
 
@@ -72,25 +48,23 @@ export default function Faqs({ data }) {
   const { allMarkdownRemark } = data
   const classes = useStyles();
 
-  const FAQList = allMarkdownRemark.edges.map ((edge, i) => {
-    const questionHREF = '#' + edge.node.frontmatter.question.toLowerCase().replace(/ /g,'-').replace('?','');
+  const FAQAccordion = allMarkdownRemark.edges.map ((edge, i) => {
+    const questionTag= edge.node.frontmatter.question.toLowerCase().replace(/ /g,'-').replace('?','');
     return (
-     <div key={i} className={classes.faqlist}>
-       <a href={questionHREF} >{i + 1}. {edge.node.frontmatter.question}</a>
-     </div>
-  )});
-
-  const FAQAnwers = allMarkdownRemark.edges.map ((edge, i) => {
-    const questionID = edge.node.frontmatter.question.toLowerCase().replace(/ /g,'-').replace('?','');
-    return (
-      <div key={i} className={classes.faqAnswers}>
-        <div id={questionID} className={classes.questions}>
-          {i + 1}. {edge.node.frontmatter.question}
-        </div>
-        <div className={classes.faqAnswers}>
-          {edge.node.frontmatter.answer}
-        </div>
-      </div>
+      <Accordion key={i} className={classes.questionandanswer}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls={questionTag}
+          id={questionTag}
+        >
+          <Typography className={classes.question}>{i + 1}. {edge.node.frontmatter.question}</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography className={classes.answer}>
+            {edge.node.frontmatter.answer}
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
   )});
 
   return (
@@ -104,20 +78,8 @@ export default function Faqs({ data }) {
           </Box>
         </Grid>
         <Grid item xs={12} >
-          <Box width='100%' mt={4} display='flex'className={classes.content} >
-            {FAQList}
-          </Box>
-        </Grid>
-        <Grid item xs={12} >
-          <Box fontWeight="fontWeightBold" borderTop={4} borderColor="grey.800" mt={6} py={0} display='flex' justifyContent='flex-start' >
-            <Typography variant="h3" className={classes.titleAnswers}>
-              FAQ Answers
-            </Typography>
-          </Box>
-        </Grid>
-        <Grid item xs={12} >
-          <Box width='100%'display='flex' justifyContent='center' directon='column' className={classes.content} >
-            {FAQAnwers}
+          <Box width='100%' mt={4} >
+            {FAQAccordion}
           </Box>
         </Grid>
       </Grid>
