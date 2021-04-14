@@ -1,9 +1,9 @@
 import React from 'react';
 import { useStaticQuery, graphql } from "gatsby"
-import { 
+import {
   makeStyles,
   createMuiTheme,
-  MuiThemeProvider 
+  MuiThemeProvider
 } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -146,7 +146,7 @@ export default function ButtonAppBar() {
                     </Link>
                   </MenuItem>
                   <MenuItem onClick={handleClose}>
-                    <Link to='/faq'>
+                    <Link to='/faqs'>
                       Frequently Asked Questions
                     </Link>
                   </MenuItem>
