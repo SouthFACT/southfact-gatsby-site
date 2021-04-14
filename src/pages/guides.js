@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   media: {
     width: '100%',
     height: '250px',
-    border: '0px solid transparent'
+    border: '0px solid transparent',
   },
   container: {
     paddingLeft: theme.spacing(4),
@@ -42,12 +42,10 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
   },
   cardButton: {
-    // width: '50%',
     justifyContent: 'flex-start'
   },
   actions: {
-    borderBottom: '1px solid #303030',
-    marginBottom: theme.spacing(3)
+    borderTop: '1px solid #303030',
   }
 }))
 
@@ -65,6 +63,13 @@ export default function Guides({ data }) {
             {edge.node.frontmatter.description}
           </Typography>
         </CardContent>
+        <CardMedia
+          className={classes.media}
+          component='iframe'
+          alt={edge.node.frontmatter.title}
+          title={edge.node.frontmatter.title}
+          image={edge.node.frontmatter.videoSourceURL}
+        />
         <CardActions className={classes.actions}>
           <Button
             variant="outlined"
@@ -76,13 +81,6 @@ export default function Guides({ data }) {
             Watch on YouTube
           </Button>
         </CardActions>
-        <CardMedia
-          className={classes.media}
-          component='iframe'
-          alt={edge.node.frontmatter.title}
-          title={edge.node.frontmatter.title}
-          image={edge.node.frontmatter.videoSourceURL}
-        />
     </Card>
   ));
 
