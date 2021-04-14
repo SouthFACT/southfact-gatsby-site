@@ -14,14 +14,16 @@ import Grid from '@material-ui/core/Grid';
 const useStyles = makeStyles((theme) => ({
   root: {
     marginTop: theme.spacing(2),
-    width: '50%',
-    minHeight: '350px',
+    minHeight: '300px',
     backgroundColor: '#101012',
+    marginBottom: theme.spacing(6),
+    marginLeft: theme.spacing(2),
+    marginRight: theme.spacing(2),
     [theme.breakpoints.down('xs')]: {
-      width: '100%',
-      marginLeft: '0',
+      marginBottom: theme.spacing(4),
+      marginLeft: theme.spacing(0),
+      marginRight: theme.spacing(0),
     },
-    marginBottom: theme.spacing(6)
   },
   media: {
     height: 0,
@@ -41,6 +43,24 @@ const useStyles = makeStyles((theme) => ({
   },
   cardButton: {
     justifyContent: 'flex-start'
+  },
+  cardDescription: {
+    minHeight: '125px',
+    [theme.breakpoints.down('xs')]: {
+      minHeight: '25px'
+    },
+    [theme.breakpoints.down('sm')]: {
+      minHeight: '25px'
+    },
+    [theme.breakpoints.down('md')]: {
+      minHeight: '125px'
+    },
+    [theme.breakpoints.down('lg')]: {
+      minHeight: '125px'
+    },
+    [theme.breakpoints.down('xl')]: {
+      minHeight: '125px'
+    }
   }
 }))
 
@@ -48,33 +68,37 @@ export default function CaseStudies({ data }) {
   const { allMarkdownRemark } = data
   const classes = useStyles();
 
-  const videoCard = allMarkdownRemark.edges.map ((edge, i) => (
-      <Card className={classes.root} key={i}>
-        <CardMedia
-          className={classes.media}
-          alt={edge.node.frontmatter.title}
-          title={edge.node.frontmatter.title}
-          image={edge.node.frontmatter.linkImage.publicURL}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            Case study: {edge.node.frontmatter.title}
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {edge.node.frontmatter.description}
-          </Typography>
-        </CardContent>
-      <CardActions>
-        <Button
-          variant="outlined"
-          href={edge.node.fields.slug}
-          className={classes.cardButton}
-        >
-          Learn more
-        </Button>
-      </CardActions>
-    </Card>
-  ));
+
+  const caseStudyCard = allMarkdownRemark.edges.map ((edge, index) => {
+    return (
+      <Grid item xs={12} sm={12} md={6} lg={4} xl={3} key={edge.node.frontmatter.title}>
+        <Card className={classes.root} key={index}>
+          <CardMedia
+            className={classes.media}
+            alt={edge.node.frontmatter.title}
+            title={edge.node.frontmatter.title}
+            image={edge.node.frontmatter.linkImage.publicURL}
+            />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h2">
+              {edge.node.frontmatter.title}
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p" className={classes.cardDescription}>
+              {edge.node.frontmatter.description}
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button
+              variant="outlined"
+              href={edge.node.fields.slug}
+              className={classes.cardButton}
+              >
+              Learn more
+            </Button>
+          </CardActions>
+        </Card>
+      </Grid>
+    )});
 
   return (
     <Layout>
@@ -88,7 +112,15 @@ export default function CaseStudies({ data }) {
         </Grid>
         <Grid item xs={12} >
           <Box width='100%' display='flex' justifyContent='center' directon='column' className={classes.content} >
-            {videoCard}
+            <Grid
+                 container
+                 spacing={2}
+                 direction="row"
+                 justify="flex-start"
+                 alignItems="flex-start"
+             >
+            {caseStudyCard}
+          </Grid>
           </Box>
         </Grid>
       </Grid>
