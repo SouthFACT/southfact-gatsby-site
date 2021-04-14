@@ -13,6 +13,7 @@ import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    marginTop: theme.spacing(2),
     width: '50%',
     minHeight: '350px',
     backgroundColor: '#101012',

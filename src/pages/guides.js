@@ -44,6 +44,10 @@ const useStyles = makeStyles((theme) => ({
   cardButton: {
     // width: '50%',
     justifyContent: 'flex-start'
+  },
+  actions: {
+    borderBottom: '1px solid #303030',
+    marginBottom: theme.spacing(3)
   }
 }))
 
@@ -53,13 +57,6 @@ export default function Guides({ data }) {
 
   const videoCard = allMarkdownRemark.edges.map ((edge, i) => (
       <Card className={classes.root} key={i}>
-        <CardMedia
-          className={classes.media}
-          component='iframe'
-          alt={edge.node.frontmatter.title}
-          title={edge.node.frontmatter.title}
-          image={edge.node.frontmatter.videoSourceURL}
-        />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
             {edge.node.frontmatter.title}
@@ -68,17 +65,24 @@ export default function Guides({ data }) {
             {edge.node.frontmatter.description}
           </Typography>
         </CardContent>
-      <CardActions>
-        <Button
-          variant="outlined"
-          target="_blank"
-          href={edge.node.frontmatter.videoSourceURL}
-          startIcon={<YouTubeIcon />}
-          className={classes.cardButton}
-        >
-          Watch on YouTube
-        </Button>
-      </CardActions>
+        <CardActions className={classes.actions}>
+          <Button
+            variant="outlined"
+            target="_blank"
+            href={edge.node.frontmatter.videoSourceURL}
+            startIcon={<YouTubeIcon />}
+            className={classes.cardButton}
+          >
+            Watch on YouTube
+          </Button>
+        </CardActions>
+        <CardMedia
+          className={classes.media}
+          component='iframe'
+          alt={edge.node.frontmatter.title}
+          title={edge.node.frontmatter.title}
+          image={edge.node.frontmatter.videoSourceURL}
+        />
     </Card>
   ));
 
