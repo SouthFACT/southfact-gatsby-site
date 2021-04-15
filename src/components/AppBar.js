@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState, useRef, useContext } from 'react';
 import { useStaticQuery, graphql } from "gatsby"
 import {
   makeStyles,
@@ -17,10 +17,16 @@ import Popover from '@material-ui/core/Popover';
 import Paper from '@material-ui/core/Paper';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import Box from '@material-ui/core/Box';
+import {
+  GlobalDispatchContext,
+  GlobalStateContext,
+} from "../context/GlobalContextProvider"
 
 const useStyles = makeStyles((theme) => ({
   button: {
-    textTransform: "none"
+    textTransform: "none",
+    borderRadius: 0,
+    borderBottom: '0px solid transparent'
   },
   root: {
     flexGrow: 1,
@@ -31,12 +37,12 @@ const useStyles = makeStyles((theme) => ({
   },
   contact: {
     flexGrow: 1,
-  },
+  }
 }));
 
 const defaultTheme = createMuiTheme();
 
-export default function ButtonAppBar() {
+export default function ButtonAppBar(props) {
   const data = useStaticQuery(
     graphql`
       query {
@@ -53,13 +59,17 @@ export default function ButtonAppBar() {
   )
 
   const classes = useStyles();
-  const [setOpen] = React.useState(false);
-  const anchorRef = React.useRef(null);
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [setOpen] = useState(false);
+  const anchorRef = useRef(null);
+  const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
 
-  const handleClick = (event) => {
+  const dispatch = useContext(GlobalDispatchContext)
+  const state = useContext(GlobalStateContext)
+
+  const handleLearnClick = (event) => {
+    dispatch({ type: event.currentTarget.getAttribute('tab') });
     setAnchorEl(event.currentTarget);
   };
 
@@ -67,16 +77,32 @@ export default function ButtonAppBar() {
     setAnchorEl(null);
   };
 
-  function handleListKeyDown(event) {
+  const handleListKeyDown = (event) => {
     if (event.key === 'Tab') {
       event.preventDefault();
       setOpen(false);
     }
   }
 
+  const setActiveStyle = (tab) => {
+    if ( state.activeTab === tab) {
+      return {
+        borderBottom: '.33rem solid #9F5222',
+      };
+    } else {
+      return {
+        borderBottom: '0.033rem solid transparent'
+      };
+    }
+  }
+
+  const handleTabClick = (event) => {
+    dispatch({ type: event.target.getAttribute('tab') });
+  }
+
   // return focus to the button when we transitioned from !open -> open
-  const prevOpen = React.useRef(open);
-  React.useEffect(() => {
+  const prevOpen = useRef(open);
+  useEffect(() => {
     if (prevOpen.current === true && open === false) {
       anchorRef.current.focus();
     }
@@ -96,15 +122,38 @@ export default function ButtonAppBar() {
           </Typography>
         </Box>
         <Toolbar mr={10}>
-          <Button className={classes.button} size='large' color='inherit'>
-            <Link to='/'>
+          <Button
+            className={classes.button}
+            onClick={handleTabClick}
+            tab='TAB_HOME'
+            size='large'
+            color='inherit'
+            style={setActiveStyle('home')}
+          >
+            <Link to='/' tab='TAB_HOME'>
               Home
             </Link>
           </Button>
-          <Button className={classes.button} size='large' color='inherit' href="https://southfact.github.io/southfact-map-v2/dist/#Home">
+          <Button
+            onClick={handleTabClick}
+            tab='TAB_MAP'
+            className={classes.button}
+            size='large'
+            color='inherit'
+            href="https://southfact.github.io/southfact-map-v2/dist/#Home"
+            style={setActiveStyle('map')}
+          >
             Map
           </Button>
-          <Button className={classes.button} size='large' color='inherit' href={data.site.siteMetadata.customRequestLink}>
+          <Button
+            onClick={handleTabClick}
+            tab='TAB_CUSTOM_REQUEST'
+            className={classes.button}
+            size='large'
+            color='inherit'
+            href={data.site.siteMetadata.customRequestLink}
+            style={setActiveStyle('custom request')}
+          >
             Custom Requests
           </Button>
           <Button
@@ -112,9 +161,11 @@ export default function ButtonAppBar() {
             ref={anchorRef}
             aria-controls={open ? 'menu-list-grow' : undefined}
             aria-haspopup="true"
-            onClick={handleClick}
+            onClick={handleLearnClick}
+            tab='TAB_LEARN'
             color='inherit'
             size='large'
+            style={setActiveStyle('learn')}
           >
             Learn
           </Button>
@@ -170,8 +221,15 @@ export default function ButtonAppBar() {
             </Paper>
           </Popover>
           <Typography className={classes.contact}>
-            <Button className={classes.button} size='large' color='inherit'>
-              <Link to='/contact' color='inherit'>
+            <Button
+              onClick={handleTabClick}
+              tab='TAB_CONTACT'
+              className={classes.button}
+              size='large'
+              color='inherit'
+              style={setActiveStyle('contact')}
+            >
+              <Link tab='TAB_CONTACT' to='/contact' color='inherit'>
                 Contact
               </Link>
             </Button>
