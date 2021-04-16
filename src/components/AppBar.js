@@ -39,7 +39,6 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   titleShort: {
-    textAlign: 'center',
     display: 'none',
     fontWeight: 'bold',
     [theme.breakpoints.down('sm')]: {
@@ -48,6 +47,7 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: theme.spacing(1)
     },
     [theme.breakpoints.down('xs')]: {
+      textAlign: 'center',
       fontSize: '1.15rem',
     }
   },
@@ -80,7 +80,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   Logo: {
-    maxWidth: theme.spacing(7),
+    maxWidth: theme.spacing(7.2),
     margin: theme.spacing(2),
     [theme.breakpoints.down('sm')]: {
       maxWidth: theme.spacing(5),
