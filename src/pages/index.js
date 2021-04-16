@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { graphql } from 'gatsby'
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
@@ -30,10 +30,7 @@ export default function IndexPage({ data }) {
   const test = {test: "test"}
   return (
     <Layout {...test} >
-      <Grid
-        container
-        justify="center"
-        >
+      <Grid container justify="center" >
         <Grid item xs={12} className={classes.title}>
           <Box fontWeight="fontWeightBold" py={0} display='flex' justifyContent='center' >
             <Typography variant="h3" align='center'>
@@ -50,10 +47,7 @@ export default function IndexPage({ data }) {
         </Grid>
       </Grid>
 
-      <Grid
-        container
-        justify="center"
-      >
+      <Grid container justify="center" >
         <Grid item xl={3} lg={1} md={1} sm={12} xs={12}>
           &nbsp;
         </Grid>

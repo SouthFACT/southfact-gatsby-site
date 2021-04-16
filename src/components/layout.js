@@ -1,4 +1,4 @@
-import React, { useState, useRef} from 'react';
+import React from 'react';
 import { Helmet } from "react-helmet"
 import Box from '@material-ui/core/Box';
 import CssBaseline from '@material-ui/core/CssBaseline';
