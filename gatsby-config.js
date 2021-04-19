@@ -45,12 +45,20 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        stylesProvider: {
+          injectFirst: true,
+        },
+      },
+    },
+    `gatsby-plugin-styled-components`,  
     `gatsby-plugin-netlify-cms-paths`,
     `gatsby-plugin-react-helmet`,
     'gatsby-plugin-react-leaflet',
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-material-ui`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-netlify-cms`,
     'gatsby-plugin-resolve-src',
