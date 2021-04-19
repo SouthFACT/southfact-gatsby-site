@@ -1,6 +1,6 @@
 ---
 templateKey: 'about'
-title: Project Overview
+title: About SouthFACT
 description: This markdown generates content for the about page
 ---
 # Background

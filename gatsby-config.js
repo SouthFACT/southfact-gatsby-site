@@ -4,6 +4,7 @@ module.exports = {
     author: `jbliss, dmichelson`,
     githubRepo: `https://github.com/SouthFACT/southfact-gatsby-site`,
     description: `Southern Forest Area Change Tools - SouthFACT`,
+    shortDescription: `Southern Forest Area Change Tools`,
     title: `SouthFACT`,
     customRequestLink: `https://code.earthengine.google.com/1da048b621d2dced56eaf20e4241c7f6?hideCode=true`,
   },
@@ -29,6 +30,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-relative-images`,
             resolve: `gatsby-plugin-netlify-cms-paths`,
+            resolve: `gatsby-remark-autolink-headers`,
           },
           {
             resolve: `gatsby-remark-images`,
@@ -39,7 +41,7 @@ module.exports = {
               linkImagesToOriginal: true,
             },
           },
-          
+
         ],
       },
     },

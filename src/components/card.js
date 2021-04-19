@@ -7,26 +7,40 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
-  cardActions: {
-    justifyContent: 'center',
+  card: {
+    minHeight: '150px',
+    margin: theme.spacing(2),
+    backgroundColor: '#101012'
   },
+  cardBody: {
+    display: 'flex',
+    minHeight: '100px',
+    justifyContent: 'center',
+    padding: theme.spacing(2)
+  },
+  cardActions: {
+    display: 'flex',
+    justifyContent: 'center'
+  },
+  cardButton: {
+    width: '100%',
+    marginLeft: theme.spacing(2),
+    marginRight: theme.spacing(2)
+  }
 }));
 
 function SimpleCard({ content, href, linkText }) {
   const classes = useStyles();
 
   return (
-    <Card>
-      <CardContent>
+    <Card className={classes.card} >
+      <CardContent className={classes.cardBody}>
         <Typography align="center">
           {content}
         </Typography>
       </CardContent>
       <CardActions className={classes.cardActions}>
-        <Button
-          size="small"
-          href={href}
-        >
+        <Button href={href} className={classes.cardButton}>
           {linkText}
         </Button>
       </CardActions>

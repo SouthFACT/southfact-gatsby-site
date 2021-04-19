@@ -1,6 +1,8 @@
 import React from "react"
+import Box from '@material-ui/core/Box';
+
 const Video = ({ videoSrcURL, videoTitle, ...props }) => (
-  <div className="video">
+  <Box width="100%" className="video">
     <iframe
       src={videoSrcURL}
       title={videoTitle}
@@ -10,6 +12,6 @@ const Video = ({ videoSrcURL, videoTitle, ...props }) => (
       mozallowfullscreen="true"
       allowFullScreen
     />
-  </div>
+  </Box>
 )
 export default Video
