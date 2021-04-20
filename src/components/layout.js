@@ -11,7 +11,7 @@ export default function Layout({children}) {
     <ThemeProvider theme={customTheme}>
       <CssBaseline/>
       <Helmet>
-        <meta // responsive meta tag: https://material-ui.com/getting-started/usage/#responsive-meta-tag
+        <meta 
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />

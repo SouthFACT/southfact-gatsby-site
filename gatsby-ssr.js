@@ -6,9 +6,15 @@
 
 // You can delete this file if you're not using it
 import React from "react"
+
 import GlobalContextProvider from "./src/context/GlobalContextProvider"
-import "./src/styles/global.css"
+import TopLayout from './src/components/TopLayout';
 
 export const wrapRootElement = ({ element }) => {
-  return <GlobalContextProvider>{element}</GlobalContextProvider>
+  return  <GlobalContextProvider>{element}</GlobalContextProvider>
 }
+
+// export const wrapPageElement = ({ element }) => {
+//   return  <TopLayout>{element}</TopLayout>
+// }
+
