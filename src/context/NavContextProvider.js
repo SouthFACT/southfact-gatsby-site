@@ -1,7 +1,7 @@
 import React from "react"
 
-export const GlobalStateContext = React.createContext()
-export const GlobalDispatchContext = React.createContext()
+export const NavStateContext = React.createContext()
+export const NavDispatchContext = React.createContext()
 
 const initialState = {
   activeTab: "home",
@@ -48,15 +48,15 @@ function reducer(state, action) {
   }
 }
 
-const GlobalContextProvider = ({ children }) => {
+const NavContextProvider = ({ children }) => {
   const [state, dispatch] = React.useReducer(reducer, initialState)
   return (
-    <GlobalStateContext.Provider value={state}>
-      <GlobalDispatchContext.Provider value={dispatch}>
+    <NavStateContext.Provider value={state}>
+      <NavDispatchContext.Provider value={dispatch}>
         {children}
-      </GlobalDispatchContext.Provider>
-    </GlobalStateContext.Provider>
+      </NavDispatchContext.Provider>
+    </NavStateContext.Provider>
   )
 }
 
-export default GlobalContextProvider
+export default NavContextProvider

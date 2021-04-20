@@ -21,9 +21,9 @@ import Logo from "../../static/img/logo.png"
 import Grid from '@material-ui/core/Grid';
 
 import {
-  GlobalDispatchContext,
-  GlobalStateContext,
-} from "../context/GlobalContextProvider"
+  NavDispatchContext,
+  NavStateContext,
+} from "../context/NavContextProvider"
 
 
 const useStyles = makeStyles((theme) => ({
@@ -134,8 +134,8 @@ export default function ButtonAppBar(props) {
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
 
-  const dispatch = useContext(GlobalDispatchContext)
-  const state = useContext(GlobalStateContext)
+  const dispatch = useContext(NavDispatchContext)
+  const state = useContext(NavStateContext)
 
   const handleLearnClick = (event) => {
     setAnchorEl(event.currentTarget);

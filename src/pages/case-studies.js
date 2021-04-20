@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { makeStyles } from '@material-ui/core/styles';
-import Layout from "../components/layout"
+import Wrapper from "../components/wrapper"
 import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -101,7 +101,7 @@ export default function CaseStudies({ data }) {
     )});
 
   return (
-    <Layout>
+    <Wrapper>
       <Grid container className={classes.container}>
         <Grid item xs={12} className={classes.title}>
           <Box fontWeight="fontWeightBold" py={0} display='flex' justifyContent='flex-start' >
@@ -124,7 +124,7 @@ export default function CaseStudies({ data }) {
           </Box>
         </Grid>
       </Grid>
-    </Layout>
+    </Wrapper>
   )
 }
 

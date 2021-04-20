@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Card from '../components/card'
-import Layout from "../components/layout"
+import Wrapper from "../components/wrapper"
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -27,9 +27,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function IndexPage({ data }) {
   const classes = useStyles({});
-  const test = {test: "test"}
   return (
-    <Layout {...test} >
+    <Wrapper>
       <Grid container justify="center" >
         <Grid item xs={12} className={classes.title}>
           <Box fontWeight="fontWeightBold" py={0} display='flex' justifyContent='center' >
@@ -76,7 +75,7 @@ export default function IndexPage({ data }) {
           &nbsp;
         </Grid>
       </Grid>
-    </Layout>
+    </Wrapper>
   )
 }
 

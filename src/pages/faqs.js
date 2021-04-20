@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { makeStyles } from '@material-ui/core/styles';
-import Layout from "../components/layout";
+import Wrapper from "../components/wrapper"
 import Typography from '@material-ui/core/Typography';
 import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
@@ -68,7 +68,7 @@ export default function Faqs({ data }) {
   )});
 
   return (
-    <Layout>
+    <Wrapper>
       <Grid container className={classes.container}>
         <Grid item xs={12} >
           <Box fontWeight="fontWeightBold" py={0} >
@@ -83,7 +83,7 @@ export default function Faqs({ data }) {
           </Box>
         </Grid>
       </Grid>
-    </Layout>
+    </Wrapper>
   )
 }
 
