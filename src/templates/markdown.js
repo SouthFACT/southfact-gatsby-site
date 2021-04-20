@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
+import Wrapper from "../components/wrapper"
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
@@ -30,7 +30,7 @@ export default function FaqTemplate(props) {
   const classes = useStyles({});
 
   return (
-    <Layout>
+    <Wrapper>
       <Grid container className={classes.container}>
         <Grid item xs={12} className={classes.title}>
           <Box fontWeight="fontWeightBold" py={0} display='flex' justifyContent='flex-start' >
@@ -43,7 +43,7 @@ export default function FaqTemplate(props) {
           <div dangerouslySetInnerHTML={{ __html: page.html }}  />
         </Box>
       </Grid>
-    </Layout>
+    </Wrapper>
   )
 }
 

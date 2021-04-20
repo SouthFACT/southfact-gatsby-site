@@ -7,14 +7,14 @@
 // You can delete this file if you're not using it
 import React from "react"
 
-import GlobalContextProvider from "./src/context/GlobalContextProvider"
-import TopLayout from './src/components/TopLayout';
+import NavContextProvider from "./src/context/NavContextProvider"
+import Layout from './src/components/layout';
 
 export const wrapRootElement = ({ element }) => {
-  return  <GlobalContextProvider>{element}</GlobalContextProvider>
+  return  <NavContextProvider>{element}</NavContextProvider>
 }
 
-// export const wrapPageElement = ({ element }) => {
-//   return  <TopLayout>{element}</TopLayout>
-// }
+export const wrapPageElement = ({ element }) => {
+  return  <Layout>{element}</Layout>
+}
 

@@ -9,7 +9,6 @@ module.exports = {
     customRequestLink: `https://code.earthengine.google.com/1da048b621d2dced56eaf20e4241c7f6?hideCode=true`,
   },
   plugins: [
-    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -45,6 +44,23 @@ module.exports = {
         ],
       },
     },
+    // {
+    //   resolve: `gatsby-plugin-material-ui`,
+    //   options: {
+    //     stylesProvider: {
+    //       injectFirst: true,
+    //     },
+    //   },
+    // },
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        // Change plugin default options here, e.g.:
+        ssr: false,
+        displayName: false,
+        minify: false
+      },
+    },
     `gatsby-plugin-netlify-cms-paths`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
@@ -52,14 +68,6 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-resolve-src`,
-    {
-      resolve: `gatsby-plugin-material-ui`,
-      options: {
-        stylesProvider: {
-          injectFirst: true,
-        },
-      },
-    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
