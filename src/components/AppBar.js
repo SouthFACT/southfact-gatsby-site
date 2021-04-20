@@ -19,6 +19,7 @@ import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import Box from '@material-ui/core/Box';
 import Logo from "../../static/img/logo.png"
 import Grid from '@material-ui/core/Grid';
+import { globalHistory } from "@reach/router"
 
 import {
   NavDispatchContext,
@@ -121,6 +122,7 @@ export default function ButtonAppBar(props) {
             description
             shortDescription
             githubRepo
+            githubRepoName
           }
         }
       }
@@ -134,6 +136,7 @@ export default function ButtonAppBar(props) {
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
 
+  const path = globalHistory.location.pathname
   const dispatch = useContext(NavDispatchContext)
   const state = useContext(NavStateContext)
 
@@ -183,6 +186,32 @@ export default function ButtonAppBar(props) {
 
     prevOpen.current = open;
   }, [open]);
+
+  useEffect(() => {
+    switch (path) {
+      case `/${data.site.siteMetadata.githubRepoName}`:
+        dispatch({ type: 'TAB_HOME' });
+        break;
+      case `/${data.site.siteMetadata.githubRepoName}/`:
+        dispatch({ type: 'TAB_HOME' });
+        break;
+      case `/${data.site.siteMetadata.githubRepoName}/contact`:
+        dispatch({ type: 'TAB_CONTACT' });
+        break;
+      case `/${data.site.siteMetadata.githubRepoName}/contact/`:
+        dispatch({ type: 'TAB_CONTACT' });
+        break;
+      case '/':
+        dispatch({ type: 'TAB_HOME' });
+        break;
+      case '/contact/':
+        dispatch({ type: 'TAB_CONTACT' });
+        break;
+      default:
+        dispatch({ type: 'TAB_LEARN' });
+        break;
+    }
+  }, []);
 
   return (
     <MuiThemeProvider theme={defaultTheme}>

@@ -8,6 +8,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
+import Link from '../components/Link';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 
@@ -61,6 +62,10 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('xl')]: {
       minHeight: '125px'
     }
+  },
+  GatsbyLink: {
+    width: '100%',
+    height: '100%'
   }
 }))
 
@@ -90,10 +95,9 @@ export default function CaseStudies({ data }) {
           <CardActions>
             <Button
               variant="outlined"
-              href={edge.node.fields.slug}
               className={classes.cardButton}
               >
-              Learn more
+              <Link className={classes.GatsbyLink} to={edge.node.fields.slug}>Learn more</Link>
             </Button>
           </CardActions>
         </Card>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { graphql } from 'gatsby'
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
@@ -6,6 +6,7 @@ import Card from '../components/card'
 import Wrapper from "../components/wrapper"
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
+import {NavDispatchContext } from "../context/NavContextProvider"
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -27,6 +28,13 @@ const useStyles = makeStyles((theme) => ({
 
 export default function IndexPage({ data }) {
   const classes = useStyles({});
+
+  const dispatch = useContext(NavDispatchContext)
+
+  const handleAboutClick = (event) => {
+    dispatch({ type: 'TAB_LEARN'});
+  };
+
   return (
     <Wrapper>
       <Grid container justify="center" >
@@ -69,6 +77,8 @@ export default function IndexPage({ data }) {
             content="Learn more about the tools and this site"
             linkText='About'
             href='/about'
+            isGatsbyLink={true}
+            onClick={handleAboutClick}
           />
         </Grid>
         <Grid item xl={3} lg={1} md={1} sm={12} xs={12}>
