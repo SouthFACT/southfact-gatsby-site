@@ -3,6 +3,7 @@ module.exports = {
   siteMetadata: {
     author: `jbliss, dmichelson`,
     githubRepo: `https://github.com/SouthFACT/southfact-gatsby-site`,
+    githubRepoName: 'southfact-gatsby-site',
     description: `Southern Forest Area Change Tools - SouthFACT`,
     shortDescription: `Southern Forest Area Change Tools`,
     title: `SouthFACT`,
@@ -44,14 +45,14 @@ module.exports = {
         ],
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-material-ui`,
-    //   options: {
-    //     stylesProvider: {
-    //       injectFirst: true,
-    //     },
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        stylesProvider: {
+          injectFirst: true,
+        },
+      },
+    },
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
