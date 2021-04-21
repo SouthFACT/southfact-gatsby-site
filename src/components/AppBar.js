@@ -106,6 +106,10 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       display: 'none'
     }
+  },
+  menuLink: {
+    width: '100%',
+    heigh: '100%',
   }
 }));
 
@@ -296,32 +300,32 @@ export default function ButtonAppBar(props) {
                   <ClickAwayListener onClickAway={handleClose}>
                     <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
                       <MenuItem onClick={handleClose}>
-                        <Link to='/about' onClick={handleLearMenuClick} tab='TAB_LEARN'>
+                        <Link to='/about' onClick={handleLearMenuClick} tab='TAB_LEARN' className={classes.menuLink}>
                           About
                         </Link>
                       </MenuItem>
                       <MenuItem onClick={handleClose}>
-                        <Link to='/case-studies' onClick={handleLearMenuClick} tab='TAB_LEARN'>
+                        <Link to='/case-studies' onClick={handleLearMenuClick} tab='TAB_LEARN' className={classes.menuLink}>
                           Case Studies
                         </Link>
                       </MenuItem>
                       <MenuItem onClick={handleClose}>
-                        <Link to='/faqs' onClick={handleLearMenuClick} tab='TAB_LEARN'>
+                        <Link to='/faqs' onClick={handleLearMenuClick} tab='TAB_LEARN' className={classes.menuLink}>
                           Frequently Asked Questions
                         </Link>
                       </MenuItem>
                       <MenuItem onClick={handleClose}>
-                        <Link to='/guides' onClick={handleLearMenuClick} tab='TAB_LEARN'>
+                        <Link to='/guides' onClick={handleLearMenuClick} tab='TAB_LEARN' className={classes.menuLink}>
                           Guides
                         </Link>
                       </MenuItem>
                       <MenuItem onClick={handleClose}>
-                        <Link to='/resources' onClick={handleLearMenuClick} tab='TAB_LEARN'>
+                        <Link to='/resources' onClick={handleLearMenuClick} tab='TAB_LEARN' className={classes.menuLink}>
                           Resources
                         </Link>
                       </MenuItem>
                       <MenuItem onClick={handleClose}>
-                        <Link to='/methods' onClick={handleLearMenuClick} tab='TAB_LEARN'>
+                        <Link to='/methods' onClick={handleLearMenuClick} tab='TAB_LEARN' className={classes.menuLink}>
                           Methods
                         </Link>
                       </MenuItem>
