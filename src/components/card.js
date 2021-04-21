@@ -27,7 +27,15 @@ const useStyles = makeStyles((theme) => ({
   cardButton: {
     width: '100%',
     marginLeft: theme.spacing(2),
-    marginRight: theme.spacing(2)
+    marginRight: theme.spacing(2),
+    [theme.breakpoints.down('md')]: {
+      minHeight: '64px',
+      textAlign: 'center'
+    },
+    [theme.breakpoints.down('sm')]: {
+      minHeight: 'unset',
+      textAlign: 'unset'
+    }
   },
   GatsbyLink: {
     width: '100%',
