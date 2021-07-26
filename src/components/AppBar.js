@@ -152,7 +152,6 @@ export default function ButtonAppBar(props) {
     dispatch({ type: event.currentTarget.getAttribute('tab') });
   };
 
-
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -191,7 +190,9 @@ export default function ButtonAppBar(props) {
     prevOpen.current = open;
   }, [open]);
 
+  // sets current tab in state - basically to ensure the correct tab is highlighted
   useEffect(() => {
+    console.log('useEffect', path)
     switch (path) {
       case `/${data.site.siteMetadata.githubRepoName}`:
         dispatch({ type: 'TAB_HOME' });
@@ -205,17 +206,32 @@ export default function ButtonAppBar(props) {
       case `/${data.site.siteMetadata.githubRepoName}/contact/`:
         dispatch({ type: 'TAB_CONTACT' });
         break;
+      case `/${data.site.siteMetadata.githubRepoName}/downloads`:
+        dispatch({ type: 'TAB_DOWNLOAD' });
+        break;
+      case `/${data.site.siteMetadata.githubRepoName}/downloads/`:
+        dispatch({ type: 'TAB_DOWNLOAD' });
+        break;
       case '/':
         dispatch({ type: 'TAB_HOME' });
         break;
+      case '/contact':
+        dispatch({ type: 'TAB_CONTACT' });
+        break;
       case '/contact/':
         dispatch({ type: 'TAB_CONTACT' });
+        break;
+      case '/downloads':
+        dispatch({ type: 'TAB_DOWNLOAD' });
+        break;
+      case '/downloads/':
+        dispatch({ type: 'TAB_DOWNLOAD' });
         break;
       default:
         dispatch({ type: 'TAB_LEARN' });
         break;
     }
-  }, []);
+  }, [dispatch, data.site.siteMetadata.githubRepoName, path]);
 
   return (
     <MuiThemeProvider theme={defaultTheme}>
@@ -333,6 +349,20 @@ export default function ButtonAppBar(props) {
                   </ClickAwayListener>
                 </Paper>
               </Popover>
+              <Typography className={classes.button}>
+                <Button
+                  onClick={handleTabClick}
+                  tab='TAB_DOWNLOAD'
+                  className={classes.button}
+                  size='large'
+                  color='inherit'
+                  style={setActiveStyle('downloads')}
+                >
+                  <Link tab='TAB_DOWNLOAD' to='/downloads' color='inherit'>
+                    Downloads
+                  </Link>
+                </Button>
+              </Typography>
               <Typography className={classes.contact}>
                 <Button
                   onClick={handleTabClick}
