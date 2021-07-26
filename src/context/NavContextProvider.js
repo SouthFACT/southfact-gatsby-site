@@ -39,6 +39,12 @@ function reducer(state, action) {
         activeTab: 'custom request',
       }
     }
+    case "TAB_DOWNLOAD": {
+      return {
+        ...state,
+        activeTab: 'downloads',
+      }
+    }
     default: {
       return {
         ...state,
