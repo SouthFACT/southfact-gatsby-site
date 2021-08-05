@@ -1,0 +1,57 @@
+backend:
+  name: github
+  ################## Local Development
+  #name: git-gateway
+  #local_backend: true
+  ##################
+  branch: master
+  repo: SouthFACT/southfact-gatsby-site
+  base_url: https://vine-spangled-ocicat.glitch.me
+  commit_messages:
+    create: 'Create {{collection}} “{{slug}}”'
+    update: 'Update {{collection}} “{{slug}}”'
+    delete: 'Delete {{collection}} “{{slug}}”'
+    uploadMedia: '[skip ci] Upload “{{path}}”'
+    deleteMedia: '[skip ci] Delete “{{path}}”'
+
+# when using the default proxy server port
+#local_backend: true
+
+media_folder: static/img
+public_folder: /img
+
+# uncomment out publish_mode when/if we can figure out how to implement it with a draft site and prod site
+# publish_mode: editorial_workflow
+# site_url: https://southfact.github.io/southfact-gatsby-site/
+# display_url: https://southfact.github.io/southfact-gatsby-site/
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "content/about/index.md"
+        label: "About"
+        name: "about"
+        fields:
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Description', name: 'description', widget: 'string' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
+      - file: "content/faq/index.md"
+        name: 'faq'
+        label: 'FAQ'
+        fields:
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Description', name: 'description', widget: 'string' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
+
+  - name: "case studies"
+    label: "Case-Studies"
+    folder: "content/case-studies"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Featured Image", name: "linkImage", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown"}
