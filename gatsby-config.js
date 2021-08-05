@@ -1,9 +1,11 @@
 module.exports = {
-  pathPrefix: "/southfact-gatsby-site",
+  // pathPrefix: "/southfact-gatsby-site",
+  pathPrefix: '',
   siteMetadata: {
     author: `jbliss, dmichelson`,
     githubRepo: `https://github.com/SouthFACT/southfact-gatsby-site`,
-    githubRepoName: 'southfact-gatsby-site',
+    // githubRepoName: 'southfact-gatsby-site',
+    githubRepoName: '',
     description: `Southern Forest Area Change Tools - SouthFACT`,
     shortDescription: `Southern Forest Area Change Tools`,
     title: `SouthFACT`,
