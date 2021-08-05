@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: "/southfact-gatsby-site",
+  // pathPrefix: "/southfact-gatsby-site",
   siteMetadata: {
     author: `jbliss, dmichelson`,
     githubRepo: `https://github.com/SouthFACT/southfact-gatsby-site`,
