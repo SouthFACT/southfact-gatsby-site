@@ -1,9 +1,9 @@
-name: Deploy Website To Production
+name: Deploy Website To Development
 
 on:
   push:
     branches:
-    - production
+    - dev
 
 jobs:
   deploy:
