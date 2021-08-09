@@ -1,6 +1,6 @@
 # This workflow will do a clean install of node dependencies, build the source code and deploy to GH pages
 
-name: Node.js CI
+name: Deploy to GH pages (development)
 
 on:
   push:
