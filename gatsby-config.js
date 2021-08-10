@@ -1,9 +1,9 @@
 module.exports = {
-  pathPrefix: '', // only use if deploying to githib pages - currently setup to push to s3 so this will break the site
+  // pathPrefix: "/southfact-gatsby-site",
   siteMetadata: {
     author: `jbliss, dmichelson`,
     githubRepo: `https://github.com/SouthFACT/southfact-gatsby-site`,
-    githubRepoName: '', // only use if deploying to githib pages - currently setup to push to s3 so this will break the site
+    githubRepoName: 'southfact-gatsby-site',
     description: `Southern Forest Area Change Tools - SouthFACT`,
     shortDescription: `Southern Forest Area Change Tools`,
     title: `SouthFACT`,
