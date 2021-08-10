@@ -21,6 +21,8 @@ jobs:
 
     - name: Deploy static site to S3 bucket for production
       run:  |
+        git config user.email "$GITHUB_ACTOR"
+        git config user.name "$GITHUB_ACTOR"
         npm install
         npm run build
         aws s3 sync ./public/ s3://dev.southfact.com --delete
