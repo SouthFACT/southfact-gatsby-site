@@ -75,7 +75,7 @@ export default function IndexPage({ data }) {
         <Grid item xl={2} lg={3} md={3} sm={12} xs={12}>
           <Card
             content="Learn more about the tools and this site"
-            linkText='About'
+            linkText='About SouthFACT'
             href='/about'
             isGatsbyLink={true}
             onClick={handleAboutClick}
