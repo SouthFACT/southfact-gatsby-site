@@ -317,7 +317,7 @@ export default function ButtonAppBar(props) {
                     <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
                       <MenuItem onClick={handleClose}>
                         <Link to='/about' onClick={handleLearMenuClick} tab='TAB_LEARN' className={classes.menuLink}>
-                          About SouthFACT
+                          About
                         </Link>
                       </MenuItem>
                       <MenuItem onClick={handleClose}>
