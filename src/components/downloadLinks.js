@@ -22,14 +22,6 @@ const DownloadLinks = [
     "link":"https://nemac.unca.edu/home/project-highlights/",
     "method":"swir",
     "year":"2020"
-  },
-  {
-    "geographylevel":"Virginia",
-    "datatype":"State Wide Change Polygons",
-    "size":"40MB",
-    "link":"https://nemac.unca.edu/home/project-highlights/",
-    "method":"swir",
-    "year":"2020"
   }
 ];
 
