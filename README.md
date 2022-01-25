@@ -3,8 +3,8 @@
 https://southfact.github.io/southfact-gatsby-site/
 
 ## Requirements
-Node V14
-Gatsby global install https://www.gatsbyjs.com/docs/tutorial/part-0/
+* Node V14
+* Gatsby global install https://www.gatsbyjs.com/docs/tutorial/part-0/
 
 ## How to use
 To install
