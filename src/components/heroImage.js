@@ -52,7 +52,7 @@ export default function HeroImage(props) {
               <Box display='flex' justifyContent='center' >
                 <img
                   className={classes.heroImage}
-                  src="/stacked-products.png"
+                  src="img/stacked-products.png"
                   alt="The three soufthfact products stacked on top to each other"
                   loading="lazy"
                 />
