@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Card from '../components/card'
+import HeroImage from '../components/heroImage';
 import Wrapper from "../components/wrapper"
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
@@ -53,6 +54,8 @@ export default function IndexPage({ data }) {
           </Box>
         </Grid>
       </Grid>
+
+      <HeroImage />
 
       <Grid container justify="center" >
         <Grid item xl={3} lg={1} md={1} sm={12} xs={12}>
