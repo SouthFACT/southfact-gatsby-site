@@ -12,6 +12,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v1
 
+    - name: Use Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12'
+
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
@@ -20,10 +25,6 @@ jobs:
         aws-region: us-east-1
 
     - name: Deploy static site to S3 bucket for production
-      uses: actions/setup-node@v1
-      with:
-        node-version: '14.x'
-        registry-url: 'https://registry.npmjs.org'    
       run: |
         git config user.email "$GITHUB_ACTOR"
         git config user.name "$GITHUB_ACTOR"
