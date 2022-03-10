@@ -7,7 +7,7 @@ module.exports = {
     description: `Southern Forest Area Change Tools - SouthFACT`,
     shortDescription: `Southern Forest Area Change Tools`,
     title: `SouthFACT`,
-    customRequestLink: `https://code.earthengine.google.com/fbfe809bc441d6da620f2cda24f4d50e?hideCode=true`,
+    customRequestLink: `https://code.earthengine.google.com/99d055f769538474c2e566a764f6eb6d?hideCode=true`,
   },
   plugins: [
     {
