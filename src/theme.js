@@ -7,6 +7,7 @@ const customTheme = createTheme(adaptV4Theme({
       // Name of the rule
       text: {
         // Some CSS
+        color: '#FFF',
         backgroundColor: '#9F5222',
         textTransform: "none",
         '&:hover': {
@@ -17,6 +18,9 @@ const customTheme = createTheme(adaptV4Theme({
   },
   palette: {
     mode: 'dark',
+    background: {
+      default: "#303030"
+    }
   },
 }));
 
