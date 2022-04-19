@@ -8,6 +8,7 @@ import Wrapper from "../components/wrapper"
 import Box from '@mui/material/Box';
 import { makeStyles } from '@mui/styles';
 import {NavDispatchContext } from "../context/NavContextProvider"
+import { color } from '@mui/system';
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -24,6 +25,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       paddingBottom: theme.spacing(4),
     }
+  },
+  disclaimer: {
+    background: 'red',
   }
 }));
 
@@ -39,6 +43,13 @@ export default function IndexPage({ data }) {
   return (
     <Wrapper>
       <Grid container justifyContent="center" >
+      <Grid item xs={12} className={classes.disclaimer}>
+          <Box fontWeight="fontWeightBold" py={0} display='flex' justifyContent='center' >
+            <Typography variant="h5" align='center'>
+              DISCLAIMER: This site is in the final stages of development and data in the Forest Change Viewer is not currently up-to-date
+            </Typography>
+          </Box>
+        </Grid>
         <Grid item xs={12} className={classes.title}>
           <Box fontWeight="fontWeightBold" py={0} display='flex' justifyContent='center' >
             <Typography variant="h3" align='center'>
