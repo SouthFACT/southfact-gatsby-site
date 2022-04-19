@@ -278,6 +278,7 @@ export default function ButtonAppBar(props) {
                   size='large'
                   color='inherit'
                   href={data.site.siteMetadata.customRequestLink}
+                  target="_blank"
                   style={setActiveStyle('custom request')}
                 >
                   <span className={classes.longText}>Custom Request</span>
