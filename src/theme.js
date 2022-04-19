@@ -1,6 +1,6 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme, adaptV4Theme } from '@mui/material/styles';
 
-const customTheme = createTheme({
+const customTheme = createTheme(adaptV4Theme({
   overrides: {
     // Style sheet name
     MuiButton: {
@@ -18,6 +18,6 @@ const customTheme = createTheme({
   palette: {
     mode: 'dark',
   },
-});
+}));
 
 export default customTheme

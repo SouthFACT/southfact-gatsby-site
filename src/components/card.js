@@ -28,11 +28,11 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     marginLeft: theme.spacing(2),
     marginRight: theme.spacing(2),
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('lg')]: {
       minHeight: '64px',
       textAlign: 'center'
     },
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       minHeight: 'unset',
       textAlign: 'unset'
     }

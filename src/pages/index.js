@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   tagline: {
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(8),
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       paddingBottom: theme.spacing(4),
     }
   }
@@ -38,7 +38,7 @@ export default function IndexPage({ data }) {
 
   return (
     <Wrapper>
-      <Grid container justify="center" >
+      <Grid container justifyContent="center" >
         <Grid item xs={12} className={classes.title}>
           <Box fontWeight="fontWeightBold" py={0} display='flex' justifyContent='center' >
             <Typography variant="h3" align='center'>
@@ -57,7 +57,7 @@ export default function IndexPage({ data }) {
 
       <HeroImage />
 
-      <Grid container justify="center" >
+      <Grid container justifyContent="center" >
         <Grid item xl={3} lg={1} md={1} sm={12} xs={12}>
           &nbsp;
         </Grid>
@@ -89,7 +89,7 @@ export default function IndexPage({ data }) {
         </Grid>
       </Grid>
     </Wrapper>
-  )
+  );
 }
 
 export const query = graphql`

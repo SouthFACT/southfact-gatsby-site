@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(6),
     marginLeft: theme.spacing(2),
     marginRight: theme.spacing(2),
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       marginBottom: theme.spacing(4),
       marginLeft: theme.spacing(0),
       marginRight: theme.spacing(0),
@@ -47,16 +47,16 @@ const useStyles = makeStyles((theme) => ({
   },
   cardDescription: {
     minHeight: '125px',
-    [theme.breakpoints.down('xs')]: {
-      minHeight: '25px'
-    },
     [theme.breakpoints.down('sm')]: {
       minHeight: '25px'
     },
     [theme.breakpoints.down('md')]: {
-      minHeight: '125px'
+      minHeight: '25px'
     },
     [theme.breakpoints.down('lg')]: {
+      minHeight: '125px'
+    },
+    [theme.breakpoints.down('xl')]: {
       minHeight: '125px'
     },
     [theme.breakpoints.down('xl')]: {
@@ -120,7 +120,7 @@ export default function CaseStudies({ data }) {
                  container
                  spacing={2}
                  direction="row"
-                 justify="flex-start"
+                 justifyContent="flex-start"
                  alignItems="flex-start"
              >
               {/*caseStudyCard*/}
@@ -134,7 +134,7 @@ export default function CaseStudies({ data }) {
         </Grid>
       </Grid>
     </Wrapper>
-  )
+  );
 }
 
 export const pageQuery = graphql`

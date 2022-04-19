@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
    margin: theme.spacing(2),
    backgroundColor: '#303030 !important',
    // backgroundColor: '#101012 !important',
-   [theme.breakpoints.down('md')]: {
+   [theme.breakpoints.down('lg')]: {
      padding: theme.spacing(2),
    }
    // borderRadius: theme.spacing(.5),
@@ -38,7 +38,7 @@ export default function HeroImage(props) {
   const classes = useStyles({});
 
   return (
-    <Grid container justify="center">
+    <Grid container justifyContent="center">
       <Grid item xl={3} lg={1} md={1} sm={12} xs={12}>
         &nbsp;
       </Grid>
@@ -47,7 +47,7 @@ export default function HeroImage(props) {
       <Grid item xl={6} lg={9} md={9} sm={12} xs={12}>
         <Paper square={false} elevation={0} variant="elevation" className={classes.card}>
 
-          <Grid container justify="center" alignItems="center">
+          <Grid container justifyContent="center" alignItems="center">
             <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
               <Box display='flex' justifyContent='center' >
                 <img
@@ -67,5 +67,5 @@ export default function HeroImage(props) {
         &nbsp;
       </Grid>
     </Grid>
-  )
+  );
 }
