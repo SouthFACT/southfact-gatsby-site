@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from "react-helmet"
-import CssBaseline from '@material-ui/core/CssBaseline';
-import { ThemeProvider } from '@material-ui/core/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import { ThemeProvider } from '@mui/material/styles';
 import customTheme from '../theme'
 
 export default function Layout({children}) {

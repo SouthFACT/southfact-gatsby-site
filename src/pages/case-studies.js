@@ -1,16 +1,16 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import Wrapper from "../components/wrapper"
-import Typography from '@material-ui/core/Typography';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
+import Typography from '@mui/material/Typography';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
 import Link from '../components/Link';
-import Box from '@material-ui/core/Box';
-import Grid from '@material-ui/core/Grid';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -123,8 +123,13 @@ export default function CaseStudies({ data }) {
                  justify="flex-start"
                  alignItems="flex-start"
              >
-            {caseStudyCard}
-          </Grid>
+              {/*caseStudyCard*/}
+            </Grid>
+          </Box>
+        </Grid>
+        <Grid item xs={12} className={classes.content}>
+          <Box>
+            Case Studies will be coming soon. Please check back another time.
           </Box>
         </Grid>
       </Grid>

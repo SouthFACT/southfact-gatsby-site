@@ -1,14 +1,14 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import Wrapper from "../components/wrapper"
-import Typography from '@material-ui/core/Typography';
-import Accordion from '@material-ui/core/Accordion';
-import AccordionSummary from '@material-ui/core/AccordionSummary';
-import AccordionDetails from '@material-ui/core/AccordionDetails';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import Box from '@material-ui/core/Box';
-import Grid from '@material-ui/core/Grid';
+import Typography from '@mui/material/Typography';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import UnfoldMoreIcon from '@mui/icons-material/UnfoldMore';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -53,7 +53,7 @@ export default function Faqs({ data }) {
     return (
       <Accordion key={i} className={classes.questionandanswer}>
         <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
+          expandIcon={<UnfoldMoreIcon />}
           aria-controls={questionTag}
           id={questionTag}
         >

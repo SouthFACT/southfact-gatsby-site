@@ -1,6 +1,6 @@
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createTheme } from '@mui/material/styles';
 
-const customTheme = createMuiTheme({
+const customTheme = createTheme({
   overrides: {
     // Style sheet name
     MuiButton: {
@@ -16,7 +16,7 @@ const customTheme = createMuiTheme({
     },
   },
   palette: {
-    type: 'dark',
+    mode: 'dark',
   },
 });
 

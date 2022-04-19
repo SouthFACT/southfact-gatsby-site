@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
 import { graphql } from 'gatsby'
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
 import Card from '../components/card'
 import HeroImage from '../components/heroImage';
 import Wrapper from "../components/wrapper"
-import Box from '@material-ui/core/Box';
-import { makeStyles } from '@material-ui/core/styles';
+import Box from '@mui/material/Box';
+import { makeStyles } from '@mui/styles';
 import {NavDispatchContext } from "../context/NavContextProvider"
 
 const useStyles = makeStyles((theme) => ({

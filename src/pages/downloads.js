@@ -1,9 +1,9 @@
 import React from "react"
 import Wrapper from "../components/wrapper"
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-import Box from '@material-ui/core/Box';
-import Grid from '@material-ui/core/Grid';
+import Typography from '@mui/material/Typography';
+import { makeStyles } from '@mui/styles';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
 import DownloadTable from '../components/downloadTable';
 import DownloadLinks from '../components/downloadLinks';
 
@@ -78,12 +78,13 @@ export default function Dowload() {
         </Grid>
         <Grid item xs={12} className={classes.content}>
           <Box fontWeight="fontWeightNormal" py={0} display='flex' justifyContent='flex-start' >
-            <DownloadTable
+            {/*<DownloadTable
               data={downloads}
               order={order}
               orderBy={orderBy}
               sortByProperty={handleColumnClick}
-            />
+            />*/}
+            Data Downloads will be coming soon. Please check back another time.
           </Box>
         </Grid>
       </Grid>

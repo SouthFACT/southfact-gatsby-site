@@ -1,24 +1,24 @@
 import React, { useEffect, useState, useRef, useContext } from 'react';
 import { useStaticQuery, graphql } from "gatsby"
 import {
-  makeStyles,
-  createMuiTheme,
-  MuiThemeProvider
-} from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import Typography from '@material-ui/core/Typography';
+  createTheme,
+  ThemeProvider
+} from '@mui/material/styles';
+import { makeStyles } from '@mui/styles'
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import Typography from '@mui/material/Typography';
 import Link from '../components/Link';
-import Button from '@material-ui/core/Button';
-import MenuItem from '@material-ui/core/MenuItem';
-import MenuList from '@material-ui/core/MenuList';
-import Popover from '@material-ui/core/Popover';
-import Paper from '@material-ui/core/Paper';
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
-import Box from '@material-ui/core/Box';
+import Button from '@mui/material/Button';
+import MenuItem from '@mui/material/MenuItem';
+import MenuList from '@mui/material/MenuList';
+import Popover from '@mui/material/Popover';
+import Paper from '@mui/material/Paper';
+import ClickAwayListener from '@mui/material/ClickAwayListener';
+import Box from '@mui/material/Box';
 import Logo from "../../static/img/logo.png"
-import Grid from '@material-ui/core/Grid';
+import Grid from '@mui/material/Grid';
 import { globalHistory } from "@reach/router"
 
 import {
@@ -113,7 +113,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const defaultTheme = createMuiTheme();
+const defaultTheme = createTheme();
 
 export default function ButtonAppBar(props) {
   const data = useStaticQuery(
@@ -234,7 +234,7 @@ export default function ButtonAppBar(props) {
   }, [dispatch, data.site.siteMetadata.githubRepoName, path]);
 
   return (
-    <MuiThemeProvider theme={defaultTheme}>
+    <ThemeProvider theme={defaultTheme}>
       <AppBar className={classes.root} position="static" >
         <Grid container justify="center" >
           <Grid item xs={12} sm={1}>
@@ -384,6 +384,6 @@ export default function ButtonAppBar(props) {
           </Grid>
         </Grid>
       </AppBar>
-    </MuiThemeProvider>
+    </ThemeProvider>
   );
 }
