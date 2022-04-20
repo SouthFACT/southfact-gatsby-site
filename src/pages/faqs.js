@@ -79,7 +79,8 @@ export default function Faqs({ data }) {
         </Grid>
         <Grid item xs={12} >
           <Box width='100%' mt={4} >
-            {FAQAccordion}
+            {/*FAQAccordion*/}
+            Information about Freqently Asked Questions will be coming soon. Please check back another time.
           </Box>
         </Grid>
       </Grid>
