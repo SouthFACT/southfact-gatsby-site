@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
+import { makeStyles } from '@mui/styles';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Button from '@mui/material/Button';
 import Link from '../components/Link';
-import Typography from '@material-ui/core/Typography';
+import Typography from '@mui/material/Typography';
 
 const useStyles = makeStyles((theme) => ({
   card: {
@@ -28,11 +28,11 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     marginLeft: theme.spacing(2),
     marginRight: theme.spacing(2),
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('lg')]: {
       minHeight: '64px',
       textAlign: 'center'
     },
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       minHeight: 'unset',
       textAlign: 'unset'
     }

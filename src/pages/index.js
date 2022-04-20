@@ -1,13 +1,17 @@
 import React, { useContext } from 'react';
 import { graphql } from 'gatsby'
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
+import Alert from '@mui/material/Alert';
+import AlertTitle from '@mui/material/AlertTitle';
+
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
 import Card from '../components/card'
 import HeroImage from '../components/heroImage';
 import Wrapper from "../components/wrapper"
-import Box from '@material-ui/core/Box';
-import { makeStyles } from '@material-ui/core/styles';
+import Box from '@mui/material/Box';
+import { makeStyles } from '@mui/styles';
 import {NavDispatchContext } from "../context/NavContextProvider"
+import { color } from '@mui/system';
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -21,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   tagline: {
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(8),
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       paddingBottom: theme.spacing(4),
     }
   }
@@ -38,7 +42,14 @@ export default function IndexPage({ data }) {
 
   return (
     <Wrapper>
-      <Grid container justify="center" >
+      <Grid container justifyContent="center" >
+      <Grid item xs={12} >
+          <Box fontWeight="fontWeightBold" py={0} display='flex' justifyContent='center' >
+            <Alert sx={{ width: '100%' }} severity="warning">
+               DISCLAIMER: This site is in the final stages of development and data in the Forest Change Viewer is not currently up-to-date
+            </Alert>
+          </Box>
+        </Grid>
         <Grid item xs={12} className={classes.title}>
           <Box fontWeight="fontWeightBold" py={0} display='flex' justifyContent='center' >
             <Typography variant="h3" align='center'>
@@ -57,7 +68,7 @@ export default function IndexPage({ data }) {
 
       <HeroImage />
 
-      <Grid container justify="center" >
+      <Grid container justifyContent="center" >
         <Grid item xl={3} lg={1} md={1} sm={12} xs={12}>
           &nbsp;
         </Grid>
@@ -89,7 +100,7 @@ export default function IndexPage({ data }) {
         </Grid>
       </Grid>
     </Wrapper>
-  )
+  );
 }
 
 export const query = graphql`

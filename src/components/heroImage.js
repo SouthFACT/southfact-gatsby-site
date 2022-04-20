@@ -1,9 +1,8 @@
 import React from "react"
-import Box from '@material-ui/core/Box';
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
+import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles((theme) => ({
   heroImage: {
@@ -27,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
  card: {
    margin: theme.spacing(2),
    backgroundColor: '#303030 !important',
-   [theme.breakpoints.down('md')]: {
+   [theme.breakpoints.down('lg')]: {
      padding: theme.spacing(2),
    }
    // borderRadius: theme.spacing(.5),
@@ -38,7 +37,7 @@ export default function HeroImage(props) {
   const classes = useStyles({});
 
   return (
-    <Grid container justify="center">
+    <Grid container justifyContent="center">
       <Grid item xl={3} lg={1} md={1} sm={12} xs={12}>
         &nbsp;
       </Grid>
@@ -47,7 +46,7 @@ export default function HeroImage(props) {
       <Grid item xl={6} lg={9} md={9} sm={12} xs={12}>
         <Paper square={false} elevation={0} variant="elevation" className={classes.card}>
 
-          <Grid container justify="center" alignItems="center">
+          <Grid container justifyContent="center" alignItems="center">
             <Grid item xl={5} lg={4} md={4} sm={12} xs={12}>
               <Box display='flex' justifyContent='center' >
                 <img
@@ -59,7 +58,7 @@ export default function HeroImage(props) {
               </Box>
             </Grid>
             <Grid item xl={7} lg={8} md={8} sm={12} xs={12}>
-              <Grid container spacing={3} justify="center" alignItems="center">
+              <Grid container spacing={3} justifyContent="center" alignItems="center">
                 <Grid item xs={12}>
                   <div className={classes.heading}>
                     Shortwave Infrared Band Differencing (SWIR)
@@ -95,5 +94,5 @@ export default function HeroImage(props) {
         &nbsp;
       </Grid>
     </Grid>
-  )
+  );
 }
