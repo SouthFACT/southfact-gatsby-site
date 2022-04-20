@@ -83,6 +83,7 @@ export default function IndexPage({ data }) {
           <Card
             content="Create forest change products for a specific area and time"
             href={data.site.siteMetadata.customRequestLink}
+            target="_blank"
             linkText="Create Custom Requests"
           />
         </Grid>

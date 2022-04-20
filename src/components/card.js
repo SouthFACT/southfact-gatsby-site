@@ -49,6 +49,7 @@ function SimpleCard(props) {
   const classes = useStyles();
   const { content } = props;
   const { href } = props;
+  const { target } = props;
   const { linkText } = props;
   const { isGatsbyLink } = props;
 
@@ -64,7 +65,7 @@ function SimpleCard(props) {
           <Button className={classes.cardButton}><Link className={classes.GatsbyLink} to={href}>{linkText}</Link></Button>
         }
         {!isGatsbyLink &&
-          <Button href={href} className={classes.cardButton}>{linkText}</Button>
+          <Button href={href} className={classes.cardButton} target={target}>{linkText}</Button>
         }
       </CardActions>
     </Card>
