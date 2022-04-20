@@ -8,8 +8,3 @@ description: "TEST ipsum dolor sit amet, consectetur adipiscing
   id metus dapibus placerat."
 linkImage: /img/southFact-test.png
 ---
-# Netlify CMS Test
-
-![robocop](/img/robocop.png "robocop")
-
-This is text after the image
