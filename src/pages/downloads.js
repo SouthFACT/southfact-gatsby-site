@@ -78,13 +78,12 @@ export default function Dowload() {
         </Grid>
         <Grid item xs={12} className={classes.content}>
           <Box fontWeight="fontWeightNormal" py={0} display='flex' justifyContent='flex-start' >
-            {/*<DownloadTable
+            <DownloadTable
               data={downloads}
               order={order}
               orderBy={orderBy}
               sortByProperty={handleColumnClick}
-            />*/}
-            Data Downloads will be coming soon. Please check back another time.
+            />
           </Box>
         </Grid>
       </Grid>

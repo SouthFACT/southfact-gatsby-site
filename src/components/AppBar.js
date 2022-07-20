@@ -266,7 +266,7 @@ export default function ButtonAppBar(props) {
                   className={classes.button}
                   size='large'
                   color='inherit'
-                  href="https://southfact.github.io/southfact-map-v2/dist/#Home"
+                  href="https://map.southfact.com"
                   style={setActiveStyle('map')}
                 >
                   Map
