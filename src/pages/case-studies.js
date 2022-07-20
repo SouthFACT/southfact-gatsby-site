@@ -1,16 +1,16 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import Wrapper from "../components/wrapper"
-import Typography from '@material-ui/core/Typography';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
+import Typography from '@mui/material/Typography';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
 import Link from '../components/Link';
-import Box from '@material-ui/core/Box';
-import Grid from '@material-ui/core/Grid';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(6),
     marginLeft: theme.spacing(2),
     marginRight: theme.spacing(2),
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       marginBottom: theme.spacing(4),
       marginLeft: theme.spacing(0),
       marginRight: theme.spacing(0),
@@ -47,16 +47,16 @@ const useStyles = makeStyles((theme) => ({
   },
   cardDescription: {
     minHeight: '125px',
-    [theme.breakpoints.down('xs')]: {
-      minHeight: '25px'
-    },
     [theme.breakpoints.down('sm')]: {
       minHeight: '25px'
     },
     [theme.breakpoints.down('md')]: {
-      minHeight: '125px'
+      minHeight: '25px'
     },
     [theme.breakpoints.down('lg')]: {
+      minHeight: '125px'
+    },
+    [theme.breakpoints.down('xl')]: {
       minHeight: '125px'
     },
     [theme.breakpoints.down('xl')]: {
@@ -120,16 +120,21 @@ export default function CaseStudies({ data }) {
                  container
                  spacing={2}
                  direction="row"
-                 justify="flex-start"
+                 justifyContent="flex-start"
                  alignItems="flex-start"
              >
-            {caseStudyCard}
-          </Grid>
+              {/*caseStudyCard*/}
+            </Grid>
+          </Box>
+        </Grid>
+        <Grid item xs={12} className={classes.content}>
+          <Box>
+            Case Studies will be coming soon. Please check back another time.
           </Box>
         </Grid>
       </Grid>
     </Wrapper>
-  )
+  );
 }
 
 export const pageQuery = graphql`

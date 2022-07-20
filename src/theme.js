@@ -1,12 +1,13 @@
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createTheme, adaptV4Theme } from '@mui/material/styles';
 
-const customTheme = createMuiTheme({
+const customTheme = createTheme(adaptV4Theme({
   overrides: {
     // Style sheet name
     MuiButton: {
       // Name of the rule
       text: {
         // Some CSS
+        color: '#FFF',
         backgroundColor: '#9F5222',
         textTransform: "none",
         '&:hover': {
@@ -16,8 +17,11 @@ const customTheme = createMuiTheme({
     },
   },
   palette: {
-    type: 'dark',
+    mode: 'dark',
+    background: {
+      default: "#303030"
+    }
   },
-});
+}));
 
 export default customTheme

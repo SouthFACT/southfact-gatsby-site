@@ -1,13 +1,13 @@
 import React from "react"
-import { withStyles, makeStyles } from '@material-ui/core/styles';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableSortLabel from '@material-ui/core/TableSortLabel';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
+import { makeStyles, withStyles } from '@mui/styles'
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableSortLabel from '@mui/material/TableSortLabel';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -52,13 +52,27 @@ export default function DownloadTabe(props) {
       <Table aria-label='Download Data Table'>
         <TableHead className={classes.header}>
           <TableRow>
+            <TableCell onClick={createSortHandler('satellite')} className={classes.headertext}>
+              <TableSortLabel
+                 active={orderBy === 'satellite'}
+                 direction={order}
+                 onClick={createSortHandler('satellite')}
+               >
+                 Satellite
+                 {orderBy === 'satellite' ? (
+                   <span  className={classes.visuallyHidden}>
+                     {order === 'desc' ? 'sorted descending' : 'sorted ascending'}
+                   </span>
+                 ) : null}
+              </TableSortLabel>
+            </TableCell>
             <TableCell onClick={createSortHandler('geographylevel')} className={classes.headertext}>
               <TableSortLabel
                  active={orderBy === 'geographylevel'}
                  direction={order}
                  onClick={createSortHandler('geographylevel')}
                >
-                 State
+                 Region
                  {orderBy === 'geographylevel' ? (
                    <span  className={classes.visuallyHidden}>
                      {order === 'desc' ? 'sorted descending' : 'sorted ascending'}
@@ -80,6 +94,20 @@ export default function DownloadTabe(props) {
                  ) : null}
                </TableSortLabel>
             </TableCell>
+            <TableCell onClick={createSortHandler('producttype')} className={classes.headertext}>
+              <TableSortLabel
+                 active={orderBy === 'producttype'}
+                 direction={order}
+                 onClick={createSortHandler('producttype')}
+               >
+                 Product Type
+                 {orderBy === 'producttype' ? (
+                   <span  className={classes.visuallyHidden}>
+                     {order === 'desc' ? 'sorted descending' : 'sorted ascending'}
+                   </span>
+                 ) : null}
+              </TableSortLabel>
+            </TableCell>
             <TableCell align='left' className={classes.headertext}>
               <TableSortLabel
                  active={orderBy === 'link'}
@@ -98,12 +126,14 @@ export default function DownloadTabe(props) {
         </TableHead>
         <TableBody>
           {data.map((row) => (
-            <StyledTableRow key={row.geographylevel}>
+            <StyledTableRow key={row.linktitle}>
+              <TableCell align='left'>{row.satellite}</TableCell>
               <TableCell component='th' scope='row' align='left'>
                 {row.geographylevel}
               </TableCell>
               <TableCell align='left'>{row.datatype}</TableCell>
-              <TableCell align='left'><a href={row.link} >{row.link}</a>  ({row.size})</TableCell>
+              <TableCell align='left'>{row.producttype}</TableCell>
+              <TableCell align='left'><a href={row.link} >{row.linktitle}</a>  ({row.size})</TableCell>
             </StyledTableRow>
           ))}
         </TableBody>
