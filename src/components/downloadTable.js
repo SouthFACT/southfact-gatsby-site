@@ -58,7 +58,7 @@ export default function DownloadTabe(props) {
                  direction={order}
                  onClick={createSortHandler('geographylevel')}
                >
-                 State
+                 Region
                  {orderBy === 'geographylevel' ? (
                    <span  className={classes.visuallyHidden}>
                      {order === 'desc' ? 'sorted descending' : 'sorted ascending'}
@@ -103,7 +103,7 @@ export default function DownloadTabe(props) {
                 {row.geographylevel}
               </TableCell>
               <TableCell align='left'>{row.datatype}</TableCell>
-              <TableCell align='left'><a href={row.link} >{row.link}</a>  ({row.size})</TableCell>
+              <TableCell align='left'><a href={row.link} >{row.linktitle}</a>  ({row.size})</TableCell>
             </StyledTableRow>
           ))}
         </TableBody>

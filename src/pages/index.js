@@ -1,7 +1,5 @@
 import React, { useContext } from 'react';
 import { graphql } from 'gatsby'
-import Alert from '@mui/material/Alert';
-import AlertTitle from '@mui/material/AlertTitle';
 
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
@@ -11,7 +9,6 @@ import Wrapper from "../components/wrapper"
 import Box from '@mui/material/Box';
 import { makeStyles } from '@mui/styles';
 import {NavDispatchContext } from "../context/NavContextProvider"
-import { color } from '@mui/system';
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -45,9 +42,6 @@ export default function IndexPage({ data }) {
       <Grid container justifyContent="center" >
       <Grid item xs={12} >
           <Box fontWeight="fontWeightBold" py={0} display='flex' justifyContent='center' >
-            <Alert sx={{ width: '100%' }} severity="warning">
-               DISCLAIMER: This site is in the final stages of development and data in the Forest Change Viewer is not currently up-to-date
-            </Alert>
           </Box>
         </Grid>
         <Grid item xs={12} className={classes.title}>
