@@ -1,5 +1,6 @@
 const DownloadLinks = [
   {
+    "satellite": "Landsat 8",
     "geographylevel":"Continental US",
     "datatype":"Normalized Difference Moisture Index (NDMI)",
     "size":"~4GB",
@@ -9,6 +10,7 @@ const DownloadLinks = [
     "year":"2022"
   },
   {
+    "satellite": "Landsat 8",
     "geographylevel":"Puerto Rico and Virgin Islands",
     "datatype":"Normalized Difference Moisture Index (NDMI)",
     "size":"~20MB",
@@ -18,6 +20,7 @@ const DownloadLinks = [
     "year":"2022"
   },
   {
+    "satellite": "Landsat 8",
     "geographylevel":"Continental US",
     "datatype":"Normalized Difference Vegetation Index (NDVI)",
     "size":"~3GB",
@@ -27,6 +30,7 @@ const DownloadLinks = [
     "year":"2022"
   },
   {
+    "satellite": "Landsat 8",
     "geographylevel":"Puerto Rico and Virgin Islands",
     "datatype":"Normalized Difference Vegetation Index (NDVI)",
     "size":"~10MB",
@@ -36,6 +40,7 @@ const DownloadLinks = [
     "year":"2022"
   },
   {
+    "satellite": "Landsat 8",
     "geographylevel":"Continental US",
     "datatype":"Short-wave infrared Differencing (SWIR)",
     "size":"~3GB",
@@ -45,6 +50,7 @@ const DownloadLinks = [
     "year":"2022"
   },
   {
+    "satellite": "Landsat 8",
     "geographylevel":"Puerto Rico and Virgin Islands",
     "datatype":"Short-wave infrared Differencing (SWIR)",
     "size":"~20MB",
@@ -54,6 +60,7 @@ const DownloadLinks = [
     "year":"2022"
   },
   {
+    "satellite": "Sentinel 2",
     "geographylevel":"Continental US",
     "datatype":"Normalized Difference Moisture Index (NDMI)",
     "size":"~4GB",
@@ -63,6 +70,7 @@ const DownloadLinks = [
     "year":"2022"
   },
   {
+    "satellite": "Sentinel 2",
     "geographylevel":"Puerto Rico and Virgin Islands",
     "datatype":"Normalized Difference Moisture Index (NDMI)",
     "size":"~15MB",
@@ -72,6 +80,7 @@ const DownloadLinks = [
     "year":"2022"
   },
   {
+    "satellite": "Sentinel 2",
     "geographylevel":"Continental US",
     "datatype":"Normalized Difference Vegetation Index (NDVI)",
     "size":"~4GB",
@@ -81,6 +90,7 @@ const DownloadLinks = [
     "year":"2022"
   },
   {
+    "satellite": "Sentinel 2",
     "geographylevel":"Puerto Rico and Virgin Islands",
     "datatype":"Normalized Difference Vegetation Index (NDVI)",
     "size":"~15MB",
@@ -90,6 +100,7 @@ const DownloadLinks = [
     "year":"2022"
   },
   {
+    "satellite": "Sentinel 2",
     "geographylevel":"Continental US",
     "datatype":"Short-wave infrared Differencing (SWIR)",
     "size":"~4GB",
@@ -99,6 +110,7 @@ const DownloadLinks = [
     "year":"2022"
   },
   {
+    "satellite": "Sentinel 2",
     "geographylevel":"Puerto Rico and Virgin Islands",
     "datatype":"Short-wave infrared Differencing (SWIR)",
     "size":"~15MB",
@@ -108,6 +120,7 @@ const DownloadLinks = [
     "year":"2022"
   },
   {
+    "satellite": "Landsat 8",
     "geographylevel":"Continental US",
     "datatype":"Short-wave infrared Differencing (SWIR)",
     "size":"~4GB",
@@ -117,6 +130,7 @@ const DownloadLinks = [
     "year":"2021"
   },
   {
+    "satellite": "Landsat 8",
     "geographylevel":"Puerto Rico and Virgin Islands",
     "datatype":"Short-wave infrared Differencing (SWIR)",
     "size":"<1MB",
@@ -126,6 +140,7 @@ const DownloadLinks = [
     "year":"2021"
   },
   {
+    "satellite": "Sentinel 2",
     "geographylevel":"Continental US",
     "datatype":"Short-wave infrared Differencing (SWIR)",
     "size":"~2.5GB",
@@ -135,6 +150,7 @@ const DownloadLinks = [
     "year":"2021"
   },
   {
+    "satellite": "Sentinel 2",
     "geographylevel":"Puerto Rico and Virgin Islands",
     "datatype":"Short-wave infrared Differencing (SWIR)",
     "size":"<1MB",

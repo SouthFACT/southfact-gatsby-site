@@ -52,6 +52,20 @@ export default function DownloadTabe(props) {
       <Table aria-label='Download Data Table'>
         <TableHead className={classes.header}>
           <TableRow>
+            <TableCell onClick={createSortHandler('satellite')} className={classes.headertext}>
+              <TableSortLabel
+                 active={orderBy === 'satellite'}
+                 direction={order}
+                 onClick={createSortHandler('satellite')}
+               >
+                 Satellite
+                 {orderBy === 'satellite' ? (
+                   <span  className={classes.visuallyHidden}>
+                     {order === 'desc' ? 'sorted descending' : 'sorted ascending'}
+                   </span>
+                 ) : null}
+              </TableSortLabel>
+            </TableCell>
             <TableCell onClick={createSortHandler('geographylevel')} className={classes.headertext}>
               <TableSortLabel
                  active={orderBy === 'geographylevel'}
@@ -98,7 +112,8 @@ export default function DownloadTabe(props) {
         </TableHead>
         <TableBody>
           {data.map((row) => (
-            <StyledTableRow key={row.geographylevel}>
+            <StyledTableRow key={row.linktitle}>
+              <TableCell align='left'>{row.satellite}</TableCell>
               <TableCell component='th' scope='row' align='left'>
                 {row.geographylevel}
               </TableCell>
