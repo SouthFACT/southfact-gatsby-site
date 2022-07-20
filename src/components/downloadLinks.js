@@ -7,6 +7,7 @@ const DownloadLinks = [
     "link":"https://data.southfact.com/current-year-to-date/ndmiLatestChangeL8CONUS.tif",
     "linktitle":"NDMI Latest Change Landsat 8 CONUS",
     "method":"NDMI",
+    "producttype": "Latest Change",
     "year":"2022"
   },
   {
@@ -17,6 +18,7 @@ const DownloadLinks = [
     "link":"https://data.southfact.com/current-year-to-date/ndmiLatestChangeL8PRVI.tif",
     "linktitle": "NDMI Latest Change Landsat 8 Puerto Rico and Virgin Islands",
     "method":"NDMI",
+    "producttype": "Latest Change",
     "year":"2022"
   },
   {
@@ -27,6 +29,7 @@ const DownloadLinks = [
     "link":"https://data.southfact.com/current-year-to-date/ndviLatestChangeL8CONUS.tif",
     "linktitle": "NDVI Latest Change Landsat 8 CONUS",
     "method":"NDVI",
+    "producttype": "Latest Change",
     "year":"2022"
   },
   {
@@ -37,6 +40,7 @@ const DownloadLinks = [
     "link":"https://data.southfact.com/current-year-to-date/ndviLatestChangeL8PRVI.tif",
     "linktitle": "NDVI Latest Change Landsat 8 Puerto Rico and Virgin Islands",
     "method":"NDVI",
+    "producttype": "Latest Change",
     "year":"2022"
   },
   {
@@ -47,6 +51,7 @@ const DownloadLinks = [
     "link":"https://data.southfact.com/current-year-to-date/swirLatestChangeL8CONUS.tif",
     "linktitle": "SWIR Latest Change Landsat 8 CONUS",
     "method":"SWIR",
+    "producttype": "Latest Change",
     "year":"2022"
   },
   {
@@ -57,6 +62,7 @@ const DownloadLinks = [
     "link":"https://data.southfact.com/current-year-to-date/swirLatestChangeL8PRVI.tif",
     "linktitle": "SWIR Latest Change Landsat 8 Puerto Rico and Virgin Islands",
     "method":"SWIR",
+    "producttype": "Latest Change",
     "year":"2022"
   },
   {
@@ -67,6 +73,7 @@ const DownloadLinks = [
     "link":"https://data.southfact.com/current-year-to-date/ndmiLatestChangeS2CONUS.tif",
     "linktitle": "NDMI Latest Change Sentinel 2 CONUS",
     "method":"NDMI",
+    "producttype": "Latest Change",
     "year":"2022"
   },
   {
@@ -77,6 +84,7 @@ const DownloadLinks = [
     "link":"https://data.southfact.com/current-year-to-date/ndmiLatestChangeS2PRVI.tif",
     "linktitle": "NDMI Latest Change Sentinel 2 Puerto Rico and Virgin Islands",
     "method":"NDMI",
+    "producttype": "Latest Change",
     "year":"2022"
   },
   {
@@ -87,6 +95,7 @@ const DownloadLinks = [
     "link":"https://data.southfact.com/current-year-to-date/ndviLatestChangeS2CONUS.tif",
     "linktitle": "NDVI Latest Change Sentinel 2 CONUS",
     "method":"NDVI",
+    "producttype": "Latest Change",
     "year":"2022"
   },
   {
@@ -97,6 +106,7 @@ const DownloadLinks = [
     "link":"https://data.southfact.com/current-year-to-date/ndviLatestChangeS2PRVI.tif",
     "linktitle": "NDVI Latest Change Sentinel 2 Puerto Rico and Virgin Islands",
     "method":"NDVI",
+    "producttype": "Latest Change",
     "year":"2022"
   },
   {
@@ -107,6 +117,7 @@ const DownloadLinks = [
     "link":"https://data.southfact.com/current-year-to-date/swirLatestChangeS2CONUS.tif",
     "linktitle": "SWIR Latest Change Sentinel 2 CONUS",
     "method":"SWIR",
+    "producttype": "Latest Change",
     "year":"2022"
   },
   {
@@ -117,6 +128,7 @@ const DownloadLinks = [
     "link":"https://data.southfact.com/current-year-to-date/swirLatestChangeS2PRVI.tif",
     "linktitle": "SWIR Latest Change Sentinel 2 Puerto Rico and Virgin Islands",
     "method":"SWIR",
+    "producttype": "Latest Change",
     "year":"2022"
   },
   {
@@ -127,6 +139,7 @@ const DownloadLinks = [
     "link":"https://data.southfact.com/LastYear/swirYearlyChange2021L8CONUS.tif",
     "linktitle": "SWIR Last Years Yearly Change Landsat 8 CONUS (2021)",
     "method":"SWIR",
+    "producttype": "Yearly",
     "year":"2021"
   },
   {
@@ -137,6 +150,7 @@ const DownloadLinks = [
     "link":"https://data.southfact.com/LastYear/swirYearlyChange2021L8PRVI.tif",
     "linktitle": "SWIR Last Years Yearly Change Landsat 8 Puerto Rico and Virgin Islands (2021)",
     "method":"SWIR",
+    "producttype": "Yearly",
     "year":"2021"
   },
   {
@@ -147,6 +161,7 @@ const DownloadLinks = [
     "link":"https://data.southfact.com/LastYear/swirYearlyChange2021S2YearlyChange2021S2CONUS.tif",
     "linktitle": "SWIR Last Years Yearly Change Sentinel 2 CONUS (2021)",
     "method":"SWIR",
+    "producttype": "Yearly",
     "year":"2021"
   },
   {
@@ -157,6 +172,7 @@ const DownloadLinks = [
     "link":"https://data.southfact.com/LastYear/swirYearlyChange2021S2PRVI.tif",
     "linktitle": "SWIR Last Years Yearly Change Sentinel 2 Puerto Rico and Virgin Islands (2021)",
     "method":"SWIR",
+    "producttype": "Yearly",
     "year":"2021"
   }
 ];

@@ -94,6 +94,20 @@ export default function DownloadTabe(props) {
                  ) : null}
                </TableSortLabel>
             </TableCell>
+            <TableCell onClick={createSortHandler('producttype')} className={classes.headertext}>
+              <TableSortLabel
+                 active={orderBy === 'producttype'}
+                 direction={order}
+                 onClick={createSortHandler('producttype')}
+               >
+                 Product Type
+                 {orderBy === 'producttype' ? (
+                   <span  className={classes.visuallyHidden}>
+                     {order === 'desc' ? 'sorted descending' : 'sorted ascending'}
+                   </span>
+                 ) : null}
+              </TableSortLabel>
+            </TableCell>
             <TableCell align='left' className={classes.headertext}>
               <TableSortLabel
                  active={orderBy === 'link'}
@@ -118,6 +132,7 @@ export default function DownloadTabe(props) {
                 {row.geographylevel}
               </TableCell>
               <TableCell align='left'>{row.datatype}</TableCell>
+              <TableCell align='left'>{row.producttype}</TableCell>
               <TableCell align='left'><a href={row.link} >{row.linktitle}</a>  ({row.size})</TableCell>
             </StyledTableRow>
           ))}
