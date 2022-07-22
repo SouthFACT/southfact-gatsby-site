@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunksouthfact=self.webpackChunksouthfact||[]).push([[883],{429:function(u,n,t){t.r(n);t(7294);var s=t(1597),e=t(8504),l=t(3431);n.default=function(){return(0,l.jsx)(e.Z,null,(0,l.jsx)("h1",null,"Page not found"),(0,l.jsx)("p",null,(0,l.jsx)(s.rU,{to:"/"},"Head home")))}}}]);
+//# sourceMappingURL=component---src-pages-404-js-2b3f2e47c40ee230612d.js.map
