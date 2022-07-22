@@ -9,6 +9,6 @@ export default function Wrapper(props) {
         <Box p={2}>
           {props.children}
         </Box>
-  </React.Fragment>
+    </React.Fragment>
   )
 }
