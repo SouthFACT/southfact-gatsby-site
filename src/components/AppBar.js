@@ -232,7 +232,6 @@ export default function ButtonAppBar(props) {
   }, [dispatch, data.site.siteMetadata.githubRepoName, path]);
 
   return (
-    <StyledEngineProvider injectFirst>
       <ThemeProvider theme={defaultTheme}>
         <AppBar sx={theme => styles(theme).root} position="static" >
           <Grid container justifyContent="center" >
@@ -385,6 +384,5 @@ export default function ButtonAppBar(props) {
           </Grid>
         </AppBar>
       </ThemeProvider>
-    </StyledEngineProvider>
   );
 }
