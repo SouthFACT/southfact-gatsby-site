@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@mui/styles';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -8,7 +7,7 @@ import Button from '@mui/material/Button';
 import Link from '../components/Link';
 import Typography from '@mui/material/Typography';
 
-const useStyles = makeStyles((theme) => ({
+const styles = (theme) => ({
   card: {
     minHeight: '150px',
     margin: theme.spacing(2),
@@ -42,11 +41,10 @@ const useStyles = makeStyles((theme) => ({
     height: '100%',
     textAlign: 'center'
   }
-}));
+});
 
 
 function SimpleCard(props) {
-  const classes = useStyles();
   const { content } = props;
   const { href } = props;
   const { target } = props;
@@ -54,18 +52,22 @@ function SimpleCard(props) {
   const { isGatsbyLink } = props;
 
   return (
-    <Card className={classes.card} >
-      <CardContent className={classes.cardBody}>
+    <Card sx={theme => styles(theme).card}>
+      <CardContent sx={theme => styles(theme).cardBody}>
         <Typography align="center">
           {content}
         </Typography>
       </CardContent>
-      <CardActions className={classes.cardActions}>
+      <CardActions sx={theme => styles(theme).cardActions}>
         {isGatsbyLink &&
-          <Button className={classes.cardButton}><Link className={classes.GatsbyLink} to={href}>{linkText}</Link></Button>
+          <Button
+            sx={theme => styles(theme).cardButton}
+          >
+            <Link sx={theme => styles(theme).GatsbyLink} to={href}>{linkText}</Link>
+          </Button>
         }
         {!isGatsbyLink &&
-          <Button href={href} className={classes.cardButton} target={target}>{linkText}</Button>
+          <Button href={href} sx={theme => styles(theme).cardButton} target={target}>{linkText}</Button>
         }
       </CardActions>
     </Card>

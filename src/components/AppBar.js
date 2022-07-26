@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef, useContext } from 'react';
 import { useStaticQuery, graphql } from "gatsby"
 import { createTheme, ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
-import { makeStyles } from '@mui/styles'
+import { styled } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -23,8 +23,33 @@ import {
   NavStateContext,
 } from "../context/NavContextProvider"
 
+const StyledLogoImg = styled('img')(({ theme }) => ({
+  maxWidth: theme.spacing(7.2),
+  margin: theme.spacing(2),
+  [theme.breakpoints.down('md')]: {
+    maxWidth: theme.spacing(5),
+    margin: theme.spacing(2),
+  },
+  [theme.breakpoints.down('sm')]: {
+    display: 'none'
+  }
+}));
 
-const useStyles = makeStyles((theme) => ({
+const StyledShortTextSpan = styled('span')(({ theme }) => ({
+  display: 'none',
+  [theme.breakpoints.down('sm')]: {
+    display: 'block',
+  }
+}));
+
+const StyledLongTextSpan = styled('span')(({ theme }) => ({
+  display: 'block',
+  [theme.breakpoints.down('sm')]: {
+    display: 'none',
+  }
+}));
+
+const styles = (theme) => ({
   root: {
     flexGrow: 1,
     backgroundColor: '#101012'
@@ -49,18 +74,6 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '1.15rem',
     }
   },
-  longText: {
-    display: 'block',
-    [theme.breakpoints.down('sm')]: {
-      display: 'none',
-    }
-  },
-  shortText: {
-    display: 'none',
-    [theme.breakpoints.down('sm')]: {
-      display: 'block',
-    }
-  },
   menuButton: {
     marginRight: theme.spacing(2),
   },
@@ -76,17 +89,6 @@ const useStyles = makeStyles((theme) => ({
   },
   contact: {
     flexGrow: 1,
-  },
-  Logo: {
-    maxWidth: theme.spacing(7.2),
-    margin: theme.spacing(2),
-    [theme.breakpoints.down('md')]: {
-      maxWidth: theme.spacing(5),
-      margin: theme.spacing(2),
-    },
-    [theme.breakpoints.down('sm')]: {
-      display: 'none'
-    }
   },
   toolbar: {
     paddingLeft: theme.spacing(0),
@@ -108,7 +110,7 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     heigh: '100%',
   }
-}));
+});
 
 const defaultTheme = createTheme();
 
@@ -130,7 +132,6 @@ export default function ButtonAppBar(props) {
     `
   )
 
-  const classes = useStyles();
   const [setOpen] = useState(false);
   const anchorRef = useRef(null);
   const [anchorEl, setAnchorEl] = useState(null);
@@ -233,23 +234,23 @@ export default function ButtonAppBar(props) {
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={defaultTheme}>
-        <AppBar className={classes.root} position="static" >
+        <AppBar sx={theme => styles(theme).root} position="static" >
           <Grid container justifyContent="center" >
             <Grid item xs={12} sm={1}>
-                <img variant="square" alt="southfact" src={Logo} className={classes.Logo} />
+                <StyledLogoImg variant="square" alt="southfact" src={Logo}/>
             </Grid>
             <Grid item xs={12} sm={11}>
-              <Box py={1} className={classes.toolbar}>
-                <Typography variant="h5" className={classes.titleLong}>
+              <Box py={1} sx={theme => styles(theme).toolbar}>
+                <Typography variant="h5" sx={theme => styles(theme).titleLong}>
                   {data.site.siteMetadata.description}
                 </Typography>
-                <Typography variant="h5" className={classes.titleShort}>
+                <Typography variant="h5" sx={theme => styles(theme).titleShort}>
                   {data.site.siteMetadata.shortDescription}
                 </Typography>
               </Box>
-              <Toolbar mr={10} className={classes.toolbar}>
+              <Toolbar mr={10} sx={theme => styles(theme).toolbar}>
                 <Button
-                  className={classes.button}
+                  sx={theme => styles(theme).button}
                   onClick={handleTabClick}
                   tab='TAB_HOME'
                   size='large'
@@ -263,7 +264,7 @@ export default function ButtonAppBar(props) {
                 <Button
                   onClick={handleTabClick}
                   tab='TAB_MAP'
-                  className={classes.button}
+                  sx={theme => styles(theme).button}
                   size='large'
                   color='inherit'
                   href="https://map.southfact.com"
@@ -274,18 +275,18 @@ export default function ButtonAppBar(props) {
                 <Button
                   onClick={handleTabClick}
                   tab='TAB_CUSTOM_REQUEST'
-                  className={classes.button}
+                  sx={theme => styles(theme).button}
                   size='large'
                   color='inherit'
                   href={data.site.siteMetadata.customRequestLink}
                   target="_blank"
                   style={setActiveStyle('custom request')}
                 >
-                  <span className={classes.longText}>Custom Request</span>
-                  <span className={classes.shortText}>Requests</span>
+                  <StyledLongTextSpan>Custom Request</StyledLongTextSpan>
+                  <StyledShortTextSpan>Requests</StyledShortTextSpan>
                 </Button>
                 <Button
-                  className={classes.button}
+                  sx={theme => styles(theme).button}
                   ref={anchorRef}
                   aria-controls={open ? 'menu-list-grow' : undefined}
                   aria-haspopup="true"
@@ -315,32 +316,32 @@ export default function ButtonAppBar(props) {
                     <ClickAwayListener onClickAway={handleClose}>
                       <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
                         <MenuItem onClick={handleClose}>
-                          <Link to='/about' onClick={handleLearMenuClick} tab='TAB_LEARN' className={classes.menuLink}>
+                          <Link to='/about' onClick={handleLearMenuClick} tab='TAB_LEARN' sx={theme => styles(theme).menuLink}>
                             About
                           </Link>
                         </MenuItem>
                         <MenuItem onClick={handleClose}>
-                          <Link to='/case-studies' onClick={handleLearMenuClick} tab='TAB_LEARN' className={classes.menuLink}>
+                          <Link to='/case-studies' onClick={handleLearMenuClick} tab='TAB_LEARN' sx={theme => styles(theme).menuLink}>
                             Case Studies
                           </Link>
                         </MenuItem>
                         <MenuItem onClick={handleClose}>
-                          <Link to='/faqs' onClick={handleLearMenuClick} tab='TAB_LEARN' className={classes.menuLink}>
+                          <Link to='/faqs' onClick={handleLearMenuClick} tab='TAB_LEARN' sx={theme => styles(theme).menuLink}>
                             Frequently Asked Questions
                           </Link>
                         </MenuItem>
                         <MenuItem onClick={handleClose}>
-                          <Link to='/guides' onClick={handleLearMenuClick} tab='TAB_LEARN' className={classes.menuLink}>
+                          <Link to='/guides' onClick={handleLearMenuClick} tab='TAB_LEARN' sx={theme => styles(theme).menuLink}>
                             Guides
                           </Link>
                         </MenuItem>
                         <MenuItem onClick={handleClose}>
-                          <Link to='/resources' onClick={handleLearMenuClick} tab='TAB_LEARN' className={classes.menuLink}>
+                          <Link to='/resources' onClick={handleLearMenuClick} tab='TAB_LEARN' sx={theme => styles(theme).menuLink}>
                             Resources
                           </Link>
                         </MenuItem>
                         <MenuItem onClick={handleClose}>
-                          <Link to='/methods' onClick={handleLearMenuClick} tab='TAB_LEARN' className={classes.menuLink}>
+                          <Link to='/methods' onClick={handleLearMenuClick} tab='TAB_LEARN' sx={theme => styles(theme).menuLink}>
                             Methods
                           </Link>
                         </MenuItem>
@@ -348,11 +349,11 @@ export default function ButtonAppBar(props) {
                     </ClickAwayListener>
                   </Paper>
                 </Popover>
-                <Typography className={classes.button}>
+                <Typography sx={theme => styles(theme).button}>
                   <Button
                     onClick={handleTabClick}
                     tab='TAB_DOWNLOAD'
-                    className={classes.button}
+                    sx={theme => styles(theme).button}
                     size='large'
                     color='inherit'
                     style={setActiveStyle('downloads')}
@@ -362,11 +363,11 @@ export default function ButtonAppBar(props) {
                     </Link>
                   </Button>
                 </Typography>
-                <Typography className={classes.contact}>
+                <Typography sx={theme => styles(theme).contact}>
                   <Button
                     onClick={handleTabClick}
                     tab='TAB_CONTACT'
-                    className={classes.button}
+                    sx={theme => styles(theme).button}
                     size='large'
                     color='inherit'
                     style={setActiveStyle('contact')}
@@ -376,7 +377,7 @@ export default function ButtonAppBar(props) {
                     </Link>
                   </Button>
                 </Typography>
-                <Button href={data.site.siteMetadata.githubRepo} color='inherit' className={classes.github}>
+                <Button href={data.site.siteMetadata.githubRepo} color='inherit' sx={theme => styles(theme).github}>
                   <GitHubIcon/>
                 </Button>
               </Toolbar>

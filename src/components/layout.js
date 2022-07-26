@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from "react-helmet"
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
-import customTheme from '../theme'
+import customTheme from '../gatsby-theme-material-ui-top-layout/theme'
 
 export default function Layout({children}) {
   return (
@@ -14,12 +14,8 @@ export default function Layout({children}) {
           rel="stylesheet"
           />
       </Helmet>
-      <StyledEngineProvider injectFirst>
-        <ThemeProvider theme={customTheme}>
-          <CssBaseline />
-          {children}
-        </ThemeProvider>
-      </StyledEngineProvider>
+      <CssBaseline />
+      {children}
     </React.Fragment>
   );
 }
