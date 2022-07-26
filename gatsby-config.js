@@ -42,35 +42,29 @@ module.exports = {
               wrapperStyle:
                 'margin-left: 0!important;',
               maxWidth: 650,
-              linkImagesToOriginal: true,
             },
           },
-
         ],
       },
     },
     {
+      resolve: `gatsby-plugin-react-helmet`,
+      options: {},
+    },
+    {
+      resolve: `gatsby-plugin-emotion`,
+      options: {},
+    },
+    {
       resolve: `gatsby-plugin-material-ui`,
-      options: {
-        stylesProvider: {
-          injectFirst: true,
-        },
-      },
+      options: {},
     },
     {
       resolve: `gatsby-plugin-styled-components`,
-      options: {
-        // Change plugin default options here, e.g.:
-        ssr: false,
-        displayName: false,
-        minify: false
-      },
+      options: {},
     },
-    `gatsby-plugin-netlify-cms-paths`,
-    `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-resolve-src`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

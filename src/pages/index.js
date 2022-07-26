@@ -7,10 +7,9 @@ import Card from '../components/card'
 import HeroImage from '../components/heroImage';
 import Wrapper from "../components/wrapper"
 import Box from '@mui/material/Box';
-import { makeStyles } from '@mui/styles';
 import {NavDispatchContext } from "../context/NavContextProvider"
 
-const useStyles = makeStyles((theme) => ({
+const styles = (theme) => ({
   button: {
     textTransform: "none",
   },
@@ -26,11 +25,9 @@ const useStyles = makeStyles((theme) => ({
       paddingBottom: theme.spacing(4),
     }
   }
-}));
+});
 
 export default function IndexPage({ data }) {
-  const classes = useStyles({});
-
   const dispatch = useContext(NavDispatchContext)
 
   const handleAboutClick = (event) => {
@@ -44,14 +41,14 @@ export default function IndexPage({ data }) {
           <Box fontWeight="fontWeightBold" py={0} display='flex' justifyContent='center' >
           </Box>
         </Grid>
-        <Grid item xs={12} className={classes.title}>
+        <Grid item xs={12} sx={theme => styles(theme).title}>
           <Box fontWeight="fontWeightBold" py={0} display='flex' justifyContent='center' >
             <Typography variant="h3" align='center'>
               {data.site.siteMetadata.title}
             </Typography>
           </Box>
         </Grid>
-        <Grid item md={4} sm={12} xs={12} className={classes.tagline}>
+        <Grid item md={4} sm={12} xs={12} sx={theme => styles(theme).tagline}>
           <Box fontWeight="fontWeightBold" py={0} display='flex' justifyContent='center' >
             <Typography variant="h5" align='center'>
               Tools to identify and quantify changes in southern forests.
