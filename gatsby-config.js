@@ -11,6 +11,21 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-theme-material-ui`,
+      options: {
+        webFontsConfig: {
+          fonts: {
+            google: [
+              {
+                family: `Montserrat`,
+                variants: [`300`, `400`, `500`],
+              },
+            ],
+          },
+        },
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/static/img`,
@@ -49,14 +64,6 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-react-helmet`,
-      options: {},
-    },
-    {
-      resolve: `gatsby-plugin-emotion`,
-      options: {},
-    },
-    {
-      resolve: `gatsby-plugin-material-ui`,
       options: {},
     },
     {
