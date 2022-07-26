@@ -1,6 +1,6 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme } from '@mui/material';
 
-const customTheme = createTheme({
+const theme = createTheme({
   components: {
     // Style sheet name
     MuiButton: {
@@ -26,4 +26,4 @@ const customTheme = createTheme({
   },
 });
 
-export default customTheme
+export default theme
