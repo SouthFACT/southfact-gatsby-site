@@ -7,29 +7,48 @@ module.exports = {
     description: `Southern Forest Area Change Tools - SouthFACT`,
     shortDescription: `Southern Forest Area Change Tools`,
     title: `SouthFACT`,
-    customRequestLink: `https://code.earthengine.google.com/fbfe809bc441d6da620f2cda24f4d50e?hideCode=true`,
+    customRequestLink: `https://code.earthengine.google.com/99d055f769538474c2e566a764f6eb6d?hideCode=true`,
   },
   plugins: [
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-theme-material-ui`,
       options: {
-        name: `images`,
-        path: `${__dirname}/static/img`,
+        webFontsConfig: {
+          fonts: {
+            google: [
+              {
+                family: `Montserrat`,
+                variants: [`300`, `400`, `500`],
+              },
+            ],
+          },
+        },
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `markdown-pages`,
+        path: `${__dirname}/static/img`,
+        name: `images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         path: `${__dirname}/content`,
+        name: `markdown-pages`,
       },
     },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          `gatsby-remark-relative-images`,
           {
-            resolve: `gatsby-remark-relative-images`,
+            resolve: `gatsby-remark-images`,
+            options: {},
+          },
+          {
             resolve: `gatsby-plugin-netlify-cms-paths`,
           },
           {
@@ -38,36 +57,21 @@ module.exports = {
               wrapperStyle:
                 'margin-left: 0!important;',
               maxWidth: 650,
-              linkImagesToOriginal: true,
             },
           },
-
         ],
       },
     },
     {
-      resolve: `gatsby-plugin-material-ui`,
-      options: {
-        stylesProvider: {
-          injectFirst: true,
-        },
-      },
+      resolve: `gatsby-plugin-react-helmet`,
+      options: {},
     },
     {
       resolve: `gatsby-plugin-styled-components`,
-      options: {
-        // Change plugin default options here, e.g.:
-        ssr: false,
-        displayName: false,
-        minify: false
-      },
+      options: {},
     },
-    `gatsby-plugin-netlify-cms-paths`,
-    `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-sass`,
-    `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-resolve-src`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

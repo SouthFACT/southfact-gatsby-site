@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Button from '@mui/material/Button';
 import Link from '../components/Link';
-import Typography from '@material-ui/core/Typography';
+import Typography from '@mui/material/Typography';
 
-const useStyles = makeStyles((theme) => ({
+const styles = (theme) => ({
   card: {
     minHeight: '150px',
     margin: theme.spacing(2),
@@ -28,11 +27,11 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     marginLeft: theme.spacing(2),
     marginRight: theme.spacing(2),
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('lg')]: {
       minHeight: '64px',
       textAlign: 'center'
     },
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       minHeight: 'unset',
       textAlign: 'unset'
     }
@@ -42,29 +41,33 @@ const useStyles = makeStyles((theme) => ({
     height: '100%',
     textAlign: 'center'
   }
-}));
+});
 
 
 function SimpleCard(props) {
-  const classes = useStyles();
   const { content } = props;
   const { href } = props;
+  const { target } = props;
   const { linkText } = props;
   const { isGatsbyLink } = props;
 
   return (
-    <Card className={classes.card} >
-      <CardContent className={classes.cardBody}>
+    <Card sx={theme => styles(theme).card}>
+      <CardContent sx={theme => styles(theme).cardBody}>
         <Typography align="center">
           {content}
         </Typography>
       </CardContent>
-      <CardActions className={classes.cardActions}>
+      <CardActions sx={theme => styles(theme).cardActions}>
         {isGatsbyLink &&
-          <Button className={classes.cardButton}><Link className={classes.GatsbyLink} to={href}>{linkText}</Link></Button>
+          <Button
+            sx={theme => styles(theme).cardButton}
+          >
+            <Link sx={theme => styles(theme).GatsbyLink} to={href}>{linkText}</Link>
+          </Button>
         }
         {!isGatsbyLink &&
-          <Button href={href} className={classes.cardButton}>{linkText}</Button>
+          <Button href={href} sx={theme => styles(theme).cardButton} target={target}>{linkText}</Button>
         }
       </CardActions>
     </Card>

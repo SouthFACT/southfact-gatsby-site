@@ -1,8 +1,8 @@
 import React from 'react';
 import { Helmet } from "react-helmet"
-import CssBaseline from '@material-ui/core/CssBaseline';
-import { ThemeProvider } from '@material-ui/core/styles';
-import customTheme from '../theme'
+import CssBaseline from '@mui/material/CssBaseline';
+import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
+import customTheme from '../gatsby-theme-material-ui-top-layout/theme'
 
 export default function Layout({children}) {
   return (
@@ -14,10 +14,8 @@ export default function Layout({children}) {
           rel="stylesheet"
           />
       </Helmet>
-      <ThemeProvider theme={customTheme}>
-        <CssBaseline />
-        {children}
-      </ThemeProvider>
+      <CssBaseline />
+      {children}
     </React.Fragment>
-  )
+  );
 }
