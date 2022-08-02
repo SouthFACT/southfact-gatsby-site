@@ -40,5 +40,3 @@ The SouthFACT project is made possible through the collaborative efforts of stat
 
 The University of North Carolina at Asheville’s National Environmental Modeling and Analysis Center (NEMAC) is supporting the development of the SouthFACT website and applications. The guidance and collaboration of the U.S. Geological Survey (USGS) Earth Resources Observation Systems (EROS) Data Center (EDC) has been and will continue to be critical throughout the project.
 
-# Adding test section at end
-Hello world! Does this auto build and deploy to gh-pages?
