@@ -30,7 +30,7 @@ The primary purpose of the SouthFACT project is to support efforts to identify a
 
 # Project Area
 
-This phase of the SouthFACT project includes 15 Southern states and territories including Puerto Rico and the Virgin Islands, encompassing 149 World Reference System (WRS) – 2 path / row areas that intersect one or more of these states/territories.
+This phase of the SouthFACT project includes 15 Southern states and territories including Puerto Rico and the Virgin Islands.
 
 ![Project Area Image](/img/prvi.jpg "Project Area Image")
 
@@ -39,3 +39,4 @@ This phase of the SouthFACT project includes 15 Southern states and territories 
 The SouthFACT project is made possible through the collaborative efforts of state forestry agencies in the South, with funding support from the U.S. Forest Service Southern Region (Region 8). Southern state forestry agencies were awarded a 2014 competitive Redesign grant under the Cooperative Forestry Assistance Act to complete the project. The N.C. Forest Service is serving as the lead state responsible for facilitating the development of the applications through the Southern Group of State Foresters (SGSF).
 
 The University of North Carolina at Asheville’s National Environmental Modeling and Analysis Center (NEMAC) is supporting the development of the SouthFACT website and applications. The guidance and collaboration of the U.S. Geological Survey (USGS) Earth Resources Observation Systems (EROS) Data Center (EDC) has been and will continue to be critical throughout the project.
+
