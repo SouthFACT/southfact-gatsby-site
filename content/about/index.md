@@ -10,9 +10,9 @@ Forests of the South are constantly changing. Numerous projects completed and on
 * [Southern Forest Resource Assessment](http://www.srs.fs.usda.gov/sustain/)
 * [Southern Forest Land Assessment](http://tfsweb.tamu.edu/main/popup.aspx?id=5818)
 * [Southern Forest Futures Project](http://www.srs.fs.usda.gov/futures/)
-* [Forest Inventory and Analysis National Program](http://www.fia.fs.fed.us/)
+* [Forest Inventory and Analysis National Program](https://www.fia.fs.usda.gov/)
 * [ForWarn](http://forwarn.forestthreats.org/)
-* [Forest Health Protection Mapping and Reporting](http://foresthealth.fs.usda.gov/portal)
+* [Forest Health Protection Mapping and Reporting](https://www.fs.fed.us/foresthealth/applied-sciences/mapping-reporting/)
 
 The Southern Forest Futures Project forecasted that up to 22 million acres of forestland in the South will be lost to other land uses over the next 50 years. Changes to forest cover due to wildfire, prescribed fire, forest pests, non-native invasive plants, natural disasters, climate, harvesting, and conversion to other uses (e.g., urban, agriculture, etc.) greatly influence the Southern landscape. Timely information that helps identify where these changes are occurring is critically important to sustain short- and long-term efforts to manage, conserve, enhance, and restore forestland in the South.
 
