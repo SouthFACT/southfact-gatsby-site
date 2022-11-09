@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-markdown-js",
-    "path": "/case-studies/case-studies/",
-    "result": {"data":{"markdownRemark":{"id":"dd7aa293-82a2-5b10-91e1-9c13b87e70c3","html":"","frontmatter":{"title":"Another netlify CMS test","description":"TEST ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pellentesque turpis tortor, vitae euismod lacus consequat ac. Suspendisse varius orci non convallis malesuada. Sed sem est, volutpat at nibh eget, consequat accumsan nisi. Morbi id lectus justo. Etiam sit amet erat id metus dapibus placerat."}}},"pageContext":{"slug":"/case-studies/case-studies/"}},
-    "staticQueryHashes": ["1962837720"]}
