@@ -1,5 +1,5 @@
 ---
-title: example-case-study-two
+title: Forest Fires using Landsat
 date: 2019-06-03 20:00:00
 description: "A small Coastal Plain fire using Landsat."
 linkImage: /img/CoastalPlainCRFire.JPG
