@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-markdown-js",
     "path": "/case-studies/new-case-study/",
-    "result": {"data":{"markdownRemark":{"id":"ff54407f-f7f6-521b-8aef-c4408f9a4a9c","html":"<p>#Use Case Forest Fire using Sentinel</p>\n<p><strong>Description:</strong> Forest fires, depending on their severity, may appear as less bright red change in the SWIR spectrum than forest harvests but Sentinel change is more detailed and freqently brighter than Landsat.</p>","frontmatter":{"title":"New case study","description":"A small Coastal Plain fire using Sentinel"}}},"pageContext":{"slug":"/case-studies/new-case-study/"}},
+    "result": {"data":{"markdownRemark":{"id":"ff54407f-f7f6-521b-8aef-c4408f9a4a9c","html":"<p>#Use Case Forest Fire using Sentinel</p>\n<p><strong>Description:</strong> Forest fires, depending on their severity, may appear as less bright red change in the SWIR spectrum than forest harvests but Sentinel change is more detailed and freqently brighter than Landsat.</p>","frontmatter":{"title":"Forest Fire using Sentinel","description":"A small Coastal Plain fire using Sentinel"}}},"pageContext":{"slug":"/case-studies/new-case-study/"}},
     "staticQueryHashes": ["1962837720"]}

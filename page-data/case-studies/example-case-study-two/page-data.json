@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-markdown-js",
     "path": "/case-studies/example-case-study-two/",
-    "result": {"data":{"markdownRemark":{"id":"53466b18-07b5-5b1d-b232-d6cf433d7e48","html":"<h1>Case Study Forest Fires using Landsat</h1>\n<p><strong>Description:</strong> Forest fires, depending on their severity, may appear as less bright red change in the SWIR spectrum than forest harvests.</p>","frontmatter":{"title":"example-case-study-two","description":"A small Coastal Plain fire using Landsat."}}},"pageContext":{"slug":"/case-studies/example-case-study-two/"}},
+    "result": {"data":{"markdownRemark":{"id":"53466b18-07b5-5b1d-b232-d6cf433d7e48","html":"<h1>Case Study Forest Fires using Landsat</h1>\n<p><strong>Description:</strong> Forest fires, depending on their severity, may appear as less bright red change in the SWIR spectrum than forest harvests.</p>","frontmatter":{"title":"Forest Fires using Landsat","description":"A small Coastal Plain fire using Landsat."}}},"pageContext":{"slug":"/case-studies/example-case-study-two/"}},
     "staticQueryHashes": ["1962837720"]}
