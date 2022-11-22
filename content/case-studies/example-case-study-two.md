@@ -1,13 +1,9 @@
 ---
-title: example-case-study-two
+title: Forest Fires using Landsat
 date: 2019-06-03 20:00:00
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing
-  elit. Pellentesque pellentesque turpis tortor, vitae euismod lacus consequat
-  ac. Suspendisse varius orci non convallis malesuada. Sed sem est, volutpat at
-  nibh eget, consequat accumsan nisi. Morbi id lectus justo. Etiam sit amet erat
-  id metus dapibus placerat."
-linkImage: /img/southFact-test.png
+description: "A small Coastal Plain fire using Landsat."
+linkImage: /img/CoastalPlainCRFire.JPG
 ---
-# Example Case Study Two Title
+# Case Study Forest Fires using Landsat
 
-This is another example case study written entirely in markdown
+**Description:** Forest fires, depending on their severity, may appear as less bright red change in the SWIR spectrum than forest harvests. 

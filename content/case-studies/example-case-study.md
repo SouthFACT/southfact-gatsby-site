@@ -1,5 +1,5 @@
 ---
-title: example-case-study
+title: Forest Harvest
 date: 2019-06-03 19:59:00
 description: "Identifying Forest Harvests. Forest managers are
   tasked with tracking harvest sites to monitor best management practices and to
@@ -7,6 +7,6 @@ description: "Identifying Forest Harvests. Forest managers are
   the SouthFACT applications to find forest harvests in Eastern North Carolina."
 linkImage: /img/southFact-test.png
 ---
-# Header One
+# Use Case One
 
-**Description:** Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla hendrerit risus ac sollicitudin maximus. Proin at enim risus. Donec libero nibh, rutrum ut congue consectetur, mattis sit amet lacus. Donec pretium sem nisl, eu blandit ex egestas ut. Nunc tempor quam ut turpis molestie egestas. Mauris elementum commodo ligula ut dapibus. Sed purus tellus, ultricies sed nulla ac, interdum tempor enim. Maecenas non vehicula lorem.
+**Description:** Forest harvest appear as bright red (greater than 60%) change in the SWIR spectrum using either Landsat or Sentinel.

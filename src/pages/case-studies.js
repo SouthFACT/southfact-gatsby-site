@@ -123,15 +123,15 @@ export default function CaseStudies({ data }) {
                  justifyContent="flex-start"
                  alignItems="flex-start"
              >
-              {/*caseStudyCard*/}
+              {caseStudyCard}
             </Grid>
           </Box>
         </Grid>
-        <Grid item xs={12} className={classes.content}>
+        {/* <Grid item xs={12} className={classes.content}>
           <Box>
             Case Studies will be coming soon. Please check back another time.
           </Box>
-        </Grid>
+        </Grid> */}
       </Grid>
     </Wrapper>
   );

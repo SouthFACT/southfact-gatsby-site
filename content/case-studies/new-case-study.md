@@ -1,7 +1,9 @@
 ---
-title: New case study
+title: Forest Fire using Sentinel
 date: 2020-06-12T14:47:48.740Z
-description: This is a new case study written using netlify cms
-linkImage: /img/southFact-test.png
+description: A small Coastal Plain fire using Sentinel
+linkImage: /img/SwampFire.JPG
 ---
-This is the body of the new case study written using netlify cms. I am also uploading a photo to see where the photo goes.
+#Use Case Forest Fire using Sentinel
+
+**Description:** Forest fires, depending on their severity, may appear as less bright red change in the SWIR spectrum than forest harvests but Sentinel change is more detailed and freqently brighter than Landsat. 
