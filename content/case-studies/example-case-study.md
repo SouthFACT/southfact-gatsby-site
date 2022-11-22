@@ -1,5 +1,5 @@
 ---
-title: example-case-study
+title: Forest Harvest
 date: 2019-06-03 19:59:00
 description: "Identifying Forest Harvests. Forest managers are
   tasked with tracking harvest sites to monitor best management practices and to
