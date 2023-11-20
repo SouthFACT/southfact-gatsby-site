@@ -7,6 +7,7 @@ import Card from '../components/card'
 import HeroImage from '../components/heroImage';
 import Wrapper from "../components/wrapper"
 import Box from '@mui/material/Box';
+import Alert from '@mui/material/Alert';
 import {NavDispatchContext } from "../context/NavContextProvider"
 
 const styles = (theme) => ({
@@ -24,6 +25,10 @@ const styles = (theme) => ({
     [theme.breakpoints.down('sm')]: {
       paddingBottom: theme.spacing(4),
     }
+  },
+  fullWidthHeight: {
+    width: "100%",
+    height: "100%"
   }
 });
 
@@ -63,12 +68,12 @@ export default function IndexPage({ data }) {
         <Grid item xl={1} lg={0} md={0} sm={12} xs={12}>
           &nbsp;
         </Grid>
-        <Grid item xl={3} lg={4} md={4} sm={12} xs={12}>
-          <Card
-          content="View recent and historical changes on a map"
-          href="https://map.southfact.com"
-          linkText="Forest Change Viewer"
-          />
+        <Grid item xl={3} lg={4} md={4} sm={12} xs={12} my={2} >
+          <Box sx={theme => styles(theme).fullWidthHeight}>
+            <Alert sx={theme => styles(theme).fullWidthHeight} severity="warning">
+              The Forest Change Viewer was retried on November 10th, 2023!
+            </Alert>
+          </Box>
         </Grid>
         <Grid item xl={3} lg={4} md={4} sm={12} xs={12}>
           <Card

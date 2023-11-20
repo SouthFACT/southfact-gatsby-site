@@ -45,6 +45,12 @@ function reducer(state, action) {
         activeTab: 'downloads',
       }
     }
+    case "TAB_ABOUT": {
+      return {
+        ...state,
+        activeTab: 'about',
+      }
+    }
     default: {
       return {
         ...state,

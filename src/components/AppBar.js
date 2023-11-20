@@ -204,6 +204,12 @@ export default function ButtonAppBar(props) {
       case `/${data.site.siteMetadata.githubRepoName}/contact/`:
         dispatch({ type: 'TAB_CONTACT' });
         break;
+      case `/${data.site.siteMetadata.githubRepoName}/about/`:
+        dispatch({ type: 'TAB_ABOUT' });
+        break;
+      case `/${data.site.siteMetadata.githubRepoName}/about`:
+        dispatch({ type: 'TAB_ABOUT' });
+        break;
       case `/${data.site.siteMetadata.githubRepoName}/downloads`:
         dispatch({ type: 'TAB_DOWNLOAD' });
         break;
@@ -225,6 +231,12 @@ export default function ButtonAppBar(props) {
       case '/downloads/':
         dispatch({ type: 'TAB_DOWNLOAD' });
         break;
+        case '/about':
+          dispatch({ type: 'TAB_ABOUT' });
+          break;
+        case '/about/':
+          dispatch({ type: 'TAB_ABOUT' });
+          break;
       default:
         dispatch({ type: 'TAB_LEARN' });
         break;
@@ -262,17 +274,6 @@ export default function ButtonAppBar(props) {
                 </Button>
                 <Button
                   onClick={handleTabClick}
-                  tab='TAB_MAP'
-                  sx={theme => styles(theme).button}
-                  size='large'
-                  color='inherit'
-                  href="https://map.southfact.com"
-                  style={setActiveStyle('map')}
-                >
-                  Map
-                </Button>
-                <Button
-                  onClick={handleTabClick}
                   tab='TAB_CUSTOM_REQUEST'
                   sx={theme => styles(theme).button}
                   size='large'
@@ -284,70 +285,6 @@ export default function ButtonAppBar(props) {
                   <StyledLongTextSpan>Custom Request</StyledLongTextSpan>
                   <StyledShortTextSpan>Requests</StyledShortTextSpan>
                 </Button>
-                <Button
-                  sx={theme => styles(theme).button}
-                  ref={anchorRef}
-                  aria-controls={open ? 'menu-list-grow' : undefined}
-                  aria-haspopup="true"
-                  color='inherit'
-                  size='large'
-                  style={setActiveStyle('learn')}
-                  onClick={handleLearnClick}
-                  tab='TAB_LEARN'
-                >
-                  Learn
-                </Button>
-                <Popover
-                  id={id}
-                  open={open}
-                  anchorEl={anchorEl}
-                  onClose={handleClose}
-                  anchorOrigin={{
-                    vertical: 'bottom',
-                    horizontal: 'center',
-                  }}
-                  transformOrigin={{
-                    vertical: 'top',
-                    horizontal: 'center',
-                  }}
-                >
-                  <Paper>
-                    <ClickAwayListener onClickAway={handleClose}>
-                      <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                        <MenuItem onClick={handleClose}>
-                          <Link to='/about' onClick={handleLearMenuClick} tab='TAB_LEARN' sx={theme => styles(theme).menuLink}>
-                            About
-                          </Link>
-                        </MenuItem>
-                        <MenuItem onClick={handleClose}>
-                          <Link to='/case-studies' onClick={handleLearMenuClick} tab='TAB_LEARN' sx={theme => styles(theme).menuLink}>
-                            Case Studies
-                          </Link>
-                        </MenuItem>
-                        <MenuItem onClick={handleClose}>
-                          <Link to='/faqs' onClick={handleLearMenuClick} tab='TAB_LEARN' sx={theme => styles(theme).menuLink}>
-                            Frequently Asked Questions
-                          </Link>
-                        </MenuItem>
-                        <MenuItem onClick={handleClose}>
-                          <Link to='/guides' onClick={handleLearMenuClick} tab='TAB_LEARN' sx={theme => styles(theme).menuLink}>
-                            Guides
-                          </Link>
-                        </MenuItem>
-                        <MenuItem onClick={handleClose}>
-                          <Link to='/resources' onClick={handleLearMenuClick} tab='TAB_LEARN' sx={theme => styles(theme).menuLink}>
-                            Resources
-                          </Link>
-                        </MenuItem>
-                        <MenuItem onClick={handleClose}>
-                          <Link to='/methods' onClick={handleLearMenuClick} tab='TAB_LEARN' sx={theme => styles(theme).menuLink}>
-                            Methods
-                          </Link>
-                        </MenuItem>
-                      </MenuList>
-                    </ClickAwayListener>
-                  </Paper>
-                </Popover>
                 <Typography sx={theme => styles(theme).button}>
                   <Button
                     onClick={handleTabClick}
@@ -359,6 +296,20 @@ export default function ButtonAppBar(props) {
                   >
                     <Link tab='TAB_DOWNLOAD' to='/downloads' color='inherit'>
                       Downloads
+                    </Link>
+                  </Button>
+                </Typography>
+                <Typography sx={theme => styles(theme).button}>
+                  <Button
+                    onClick={handleTabClick}
+                    tab='TAB_ABOUT'
+                    sx={theme => styles(theme).button}
+                    size='large'
+                    color='inherit'
+                    style={setActiveStyle('about')}
+                  >
+                    <Link tab='TAB_DOWNLOAD' to='/about' color='inherit'>
+                      About
                     </Link>
                   </Button>
                 </Typography>
