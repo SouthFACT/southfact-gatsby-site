@@ -10,9 +10,9 @@ Forests of the South are constantly changing. Numerous projects completed and on
 * [Southern Forest Resource Assessment](http://www.srs.fs.usda.gov/sustain/)
 * [Southern Forest Land Assessment](http://tfsweb.tamu.edu/main/popup.aspx?id=5818)
 * [Southern Forest Futures Project](http://www.srs.fs.usda.gov/futures/)
-* [Forest Inventory and Analysis National Program](http://www.fia.fs.fed.us/)
+* [Forest Inventory and Analysis National Program](https://www.fia.fs.usda.gov/)
 * [ForWarn](http://forwarn.forestthreats.org/)
-* [Forest Health Protection Mapping and Reporting](http://foresthealth.fs.usda.gov/portal)
+* [Forest Health Protection Mapping and Reporting](https://www.fs.fed.us/foresthealth/applied-sciences/mapping-reporting/)
 
 The Southern Forest Futures Project forecasted that up to 22 million acres of forestland in the South will be lost to other land uses over the next 50 years. Changes to forest cover due to wildfire, prescribed fire, forest pests, non-native invasive plants, natural disasters, climate, harvesting, and conversion to other uses (e.g., urban, agriculture, etc.) greatly influence the Southern landscape. Timely information that helps identify where these changes are occurring is critically important to sustain short- and long-term efforts to manage, conserve, enhance, and restore forestland in the South.
 
@@ -30,7 +30,7 @@ The primary purpose of the SouthFACT project is to support efforts to identify a
 
 # Project Area
 
-This phase of the SouthFACT project includes 15 Southern states and territories including Puerto Rico and the Virgin Islands, encompassing 149 World Reference System (WRS) – 2 path / row areas that intersect one or more of these states/territories.
+This phase of the SouthFACT project includes 15 Southern states and territories including Puerto Rico and the Virgin Islands.
 
 ![Project Area Image](/img/prvi.jpg "Project Area Image")
 
@@ -40,6 +40,3 @@ The SouthFACT project is made possible through the collaborative efforts of stat
 
 The University of North Carolina at Asheville’s National Environmental Modeling and Analysis Center (NEMAC) is supporting the development of the SouthFACT website and applications. The guidance and collaboration of the U.S. Geological Survey (USGS) Earth Resources Observation Systems (EROS) Data Center (EDC) has been and will continue to be critical throughout the project.
 
-# Adding a new header as a netlify CMS test
-
-This has been added through netlify CMS.

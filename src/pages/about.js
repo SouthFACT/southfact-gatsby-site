@@ -4,6 +4,8 @@ import Typography from '@mui/material/Typography';
 import { makeStyles } from '@mui/styles';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
+import Alert from '@mui/material/Alert';
+
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -22,9 +24,11 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(0),
   },
-}))
+}));
 
-export default function Methods() {
+
+
+export default function Dowload() {
   const classes = useStyles({});
 
   return (
@@ -33,13 +37,15 @@ export default function Methods() {
         <Grid item xs={12} className={classes.title}>
           <Box fontWeight="fontWeightBold" py={0} display='flex' justifyContent='flex-start' >
             <Typography variant="h3">
-              Methods
+              About SouthFact
             </Typography>
           </Box>
         </Grid>
         <Grid item xs={12} className={classes.content}>
-          <Box>
-            Information about Methods will be coming soon. Please check back another time.
+          <Box fontWeight="fontWeightNormal" py={0} display='flex' justifyContent='flex-start' sx={{ width: '100%', height: '100%'}}>
+            <Alert severity="warning" sx={{ width: '100%', height: '100%' }}>
+              The SouthFact project was retried on November 10th, 2023!
+            </Alert>
           </Box>
         </Grid>
       </Grid>

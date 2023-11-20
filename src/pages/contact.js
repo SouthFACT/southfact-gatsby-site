@@ -1,9 +1,10 @@
 import React from "react"
 import Wrapper from "../components/wrapper"
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-import Box from '@material-ui/core/Box';
-import Grid from '@material-ui/core/Grid';
+import Typography from '@mui/material/Typography';
+import { makeStyles } from '@mui/styles';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import Alert from '@mui/material/Alert';
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -38,8 +39,10 @@ export default function Contact() {
             </Box>
           </Grid>
           <Grid item xs={12} className={classes.content}>
-            <Box>
-              If you have any questions, comments, or concerns please send an email to <a href='mailto:info@southfact.com'>info@southfact.com</a>
+            <Box fontWeight="fontWeightNormal" py={0} display='flex' justifyContent='flex-start' sx={{ width: '100%', height: '100%'}}>
+              <Alert severity="warning" sx={{ width: '100%', height: '100%' }}>
+                Monitoring of this sit was retried on November 10th, 2023!
+              </Alert>
             </Box>
           </Grid>
         </Grid>

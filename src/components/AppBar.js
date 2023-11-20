@@ -1,24 +1,21 @@
 import React, { useEffect, useState, useRef, useContext } from 'react';
 import { useStaticQuery, graphql } from "gatsby"
-import {
-  makeStyles,
-  createMuiTheme,
-  MuiThemeProvider
-} from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import Typography from '@material-ui/core/Typography';
+import { createTheme, ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import Typography from '@mui/material/Typography';
 import Link from '../components/Link';
-import Button from '@material-ui/core/Button';
-import MenuItem from '@material-ui/core/MenuItem';
-import MenuList from '@material-ui/core/MenuList';
-import Popover from '@material-ui/core/Popover';
-import Paper from '@material-ui/core/Paper';
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
-import Box from '@material-ui/core/Box';
+import Button from '@mui/material/Button';
+import MenuItem from '@mui/material/MenuItem';
+import MenuList from '@mui/material/MenuList';
+import Popover from '@mui/material/Popover';
+import Paper from '@mui/material/Paper';
+import ClickAwayListener from '@mui/material/ClickAwayListener';
+import Box from '@mui/material/Box';
 import Logo from "../../static/img/logo.png"
-import Grid from '@material-ui/core/Grid';
+import Grid from '@mui/material/Grid';
 import { globalHistory } from "@reach/router"
 
 import {
@@ -26,8 +23,33 @@ import {
   NavStateContext,
 } from "../context/NavContextProvider"
 
+const StyledLogoImg = styled('img')(({ theme }) => ({
+  maxWidth: theme.spacing(7.2),
+  margin: theme.spacing(2),
+  [theme.breakpoints.down('md')]: {
+    maxWidth: theme.spacing(5),
+    margin: theme.spacing(2),
+  },
+  [theme.breakpoints.down('sm')]: {
+    display: 'none'
+  }
+}));
 
-const useStyles = makeStyles((theme) => ({
+const StyledShortTextSpan = styled('span')(({ theme }) => ({
+  display: 'none',
+  [theme.breakpoints.down('sm')]: {
+    display: 'block',
+  }
+}));
+
+const StyledLongTextSpan = styled('span')(({ theme }) => ({
+  display: 'block',
+  [theme.breakpoints.down('sm')]: {
+    display: 'none',
+  }
+}));
+
+const styles = (theme) => ({
   root: {
     flexGrow: 1,
     backgroundColor: '#101012'
@@ -35,33 +57,21 @@ const useStyles = makeStyles((theme) => ({
   titleLong: {
     display: 'block',
     fontSize: '2rem',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       display: 'none'
     }
   },
   titleShort: {
     display: 'none',
     fontWeight: 'bold',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       display: 'block',
       fontSize: '1.33rem',
       marginLeft: theme.spacing(1)
     },
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       textAlign: 'center',
       fontSize: '1.15rem',
-    }
-  },
-  longText: {
-    display: 'block',
-    [theme.breakpoints.down('xs')]: {
-      display: 'none',
-    }
-  },
-  shortText: {
-    display: 'none',
-    [theme.breakpoints.down('xs')]: {
-      display: 'block',
     }
   },
   menuButton: {
@@ -71,7 +81,7 @@ const useStyles = makeStyles((theme) => ({
     textTransform: "none",
     borderRadius: 0,
     borderBottom: '0px solid transparent',
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       minWidth: theme.spacing(6),
       paddingRight: theme.spacing(1),
       paddingLeft: theme.spacing(1),
@@ -80,30 +90,19 @@ const useStyles = makeStyles((theme) => ({
   contact: {
     flexGrow: 1,
   },
-  Logo: {
-    maxWidth: theme.spacing(7.2),
-    margin: theme.spacing(2),
-    [theme.breakpoints.down('sm')]: {
-      maxWidth: theme.spacing(5),
-      margin: theme.spacing(2),
-    },
-    [theme.breakpoints.down('xs')]: {
-      display: 'none'
-    }
-  },
   toolbar: {
     paddingLeft: theme.spacing(0),
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       minHeight: theme.spacing(4),
     },
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       paddingRight: theme.spacing(1),
       paddingLeft: theme.spacing(1),
       paddingBottom: theme.spacing(1)
     }
   },
   github: {
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       display: 'none'
     }
   },
@@ -111,9 +110,9 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     heigh: '100%',
   }
-}));
+});
 
-const defaultTheme = createMuiTheme();
+const defaultTheme = createTheme();
 
 export default function ButtonAppBar(props) {
   const data = useStaticQuery(
@@ -133,7 +132,6 @@ export default function ButtonAppBar(props) {
     `
   )
 
-  const classes = useStyles();
   const [setOpen] = useState(false);
   const anchorRef = useRef(null);
   const [anchorEl, setAnchorEl] = useState(null);
@@ -206,6 +204,12 @@ export default function ButtonAppBar(props) {
       case `/${data.site.siteMetadata.githubRepoName}/contact/`:
         dispatch({ type: 'TAB_CONTACT' });
         break;
+      case `/${data.site.siteMetadata.githubRepoName}/about/`:
+        dispatch({ type: 'TAB_ABOUT' });
+        break;
+      case `/${data.site.siteMetadata.githubRepoName}/about`:
+        dispatch({ type: 'TAB_ABOUT' });
+        break;
       case `/${data.site.siteMetadata.githubRepoName}/downloads`:
         dispatch({ type: 'TAB_DOWNLOAD' });
         break;
@@ -227,6 +231,12 @@ export default function ButtonAppBar(props) {
       case '/downloads/':
         dispatch({ type: 'TAB_DOWNLOAD' });
         break;
+        case '/about':
+          dispatch({ type: 'TAB_ABOUT' });
+          break;
+        case '/about/':
+          dispatch({ type: 'TAB_ABOUT' });
+          break;
       default:
         dispatch({ type: 'TAB_LEARN' });
         break;
@@ -234,156 +244,96 @@ export default function ButtonAppBar(props) {
   }, [dispatch, data.site.siteMetadata.githubRepoName, path]);
 
   return (
-    <MuiThemeProvider theme={defaultTheme}>
-      <AppBar className={classes.root} position="static" >
-        <Grid container justify="center" >
-          <Grid item xs={12} sm={1}>
-              <img variant="square" alt="southfact" src={Logo} className={classes.Logo} />
-          </Grid>
-          <Grid item xs={12} sm={11}>
-            <Box py={1} className={classes.toolbar}>
-              <Typography variant="h5" className={classes.titleLong}>
-                {data.site.siteMetadata.description}
-              </Typography>
-              <Typography variant="h5" className={classes.titleShort}>
-                {data.site.siteMetadata.shortDescription}
-              </Typography>
-            </Box>
-            <Toolbar mr={10} className={classes.toolbar}>
-              <Button
-                className={classes.button}
-                onClick={handleTabClick}
-                tab='TAB_HOME'
-                size='large'
-                color='inherit'
-                style={setActiveStyle('home')}
-              >
-                <Link to='/' tab='TAB_HOME'>
-                  Home
-                </Link>
-              </Button>
-              <Button
-                onClick={handleTabClick}
-                tab='TAB_MAP'
-                className={classes.button}
-                size='large'
-                color='inherit'
-                href="https://southfact.github.io/southfact-map-v2/dist/#Home"
-                style={setActiveStyle('map')}
-              >
-                Map
-              </Button>
-              <Button
-                onClick={handleTabClick}
-                tab='TAB_CUSTOM_REQUEST'
-                className={classes.button}
-                size='large'
-                color='inherit'
-                href={data.site.siteMetadata.customRequestLink}
-                style={setActiveStyle('custom request')}
-              >
-                <span className={classes.longText}>Custom Request</span>
-                <span className={classes.shortText}>Requests</span>
-              </Button>
-              <Button
-                className={classes.button}
-                ref={anchorRef}
-                aria-controls={open ? 'menu-list-grow' : undefined}
-                aria-haspopup="true"
-                color='inherit'
-                size='large'
-                style={setActiveStyle('learn')}
-                onClick={handleLearnClick}
-                tab='TAB_LEARN'
-              >
-                Learn
-              </Button>
-              <Popover
-                id={id}
-                open={open}
-                anchorEl={anchorEl}
-                onClose={handleClose}
-                anchorOrigin={{
-                  vertical: 'bottom',
-                  horizontal: 'center',
-                }}
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'center',
-                }}
-              >
-                <Paper>
-                  <ClickAwayListener onClickAway={handleClose}>
-                    <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                      <MenuItem onClick={handleClose}>
-                        <Link to='/about' onClick={handleLearMenuClick} tab='TAB_LEARN' className={classes.menuLink}>
-                          About
-                        </Link>
-                      </MenuItem>
-                      <MenuItem onClick={handleClose}>
-                        <Link to='/case-studies' onClick={handleLearMenuClick} tab='TAB_LEARN' className={classes.menuLink}>
-                          Case Studies
-                        </Link>
-                      </MenuItem>
-                      <MenuItem onClick={handleClose}>
-                        <Link to='/faqs' onClick={handleLearMenuClick} tab='TAB_LEARN' className={classes.menuLink}>
-                          Frequently Asked Questions
-                        </Link>
-                      </MenuItem>
-                      <MenuItem onClick={handleClose}>
-                        <Link to='/guides' onClick={handleLearMenuClick} tab='TAB_LEARN' className={classes.menuLink}>
-                          Guides
-                        </Link>
-                      </MenuItem>
-                      <MenuItem onClick={handleClose}>
-                        <Link to='/resources' onClick={handleLearMenuClick} tab='TAB_LEARN' className={classes.menuLink}>
-                          Resources
-                        </Link>
-                      </MenuItem>
-                      <MenuItem onClick={handleClose}>
-                        <Link to='/methods' onClick={handleLearMenuClick} tab='TAB_LEARN' className={classes.menuLink}>
-                          Methods
-                        </Link>
-                      </MenuItem>
-                    </MenuList>
-                  </ClickAwayListener>
-                </Paper>
-              </Popover>
-              <Typography className={classes.button}>
+      <ThemeProvider theme={defaultTheme}>
+        <AppBar sx={theme => styles(theme).root} position="static" >
+          <Grid container justifyContent="center" >
+            <Grid item xs={12} sm={1}>
+                <StyledLogoImg variant="square" alt="southfact" src={Logo}/>
+            </Grid>
+            <Grid item xs={12} sm={11}>
+              <Box py={1} sx={theme => styles(theme).toolbar}>
+                <Typography variant="h5" sx={theme => styles(theme).titleLong}>
+                  {data.site.siteMetadata.description}
+                </Typography>
+                <Typography variant="h5" sx={theme => styles(theme).titleShort}>
+                  {data.site.siteMetadata.shortDescription}
+                </Typography>
+              </Box>
+              <Toolbar mr={10} sx={theme => styles(theme).toolbar}>
                 <Button
+                  sx={theme => styles(theme).button}
                   onClick={handleTabClick}
-                  tab='TAB_DOWNLOAD'
-                  className={classes.button}
+                  tab='TAB_HOME'
                   size='large'
                   color='inherit'
-                  style={setActiveStyle('downloads')}
+                  style={setActiveStyle('home')}
                 >
-                  <Link tab='TAB_DOWNLOAD' to='/downloads' color='inherit'>
-                    Downloads
+                  <Link to='/' tab='TAB_HOME'>
+                    Home
                   </Link>
                 </Button>
-              </Typography>
-              <Typography className={classes.contact}>
                 <Button
                   onClick={handleTabClick}
-                  tab='TAB_CONTACT'
-                  className={classes.button}
+                  tab='TAB_CUSTOM_REQUEST'
+                  sx={theme => styles(theme).button}
                   size='large'
                   color='inherit'
-                  style={setActiveStyle('contact')}
+                  href={data.site.siteMetadata.customRequestLink}
+                  target="_blank"
+                  style={setActiveStyle('custom request')}
                 >
-                  <Link tab='TAB_CONTACT' to='/contact' color='inherit'>
-                    Contact
-                  </Link>
+                  <StyledLongTextSpan>Custom Request</StyledLongTextSpan>
+                  <StyledShortTextSpan>Requests</StyledShortTextSpan>
                 </Button>
-              </Typography>
-              <Button href={data.site.siteMetadata.githubRepo} color='inherit' className={classes.github}>
-                <GitHubIcon/>
-              </Button>
-            </Toolbar>
+                <Typography sx={theme => styles(theme).button}>
+                  <Button
+                    onClick={handleTabClick}
+                    tab='TAB_DOWNLOAD'
+                    sx={theme => styles(theme).button}
+                    size='large'
+                    color='inherit'
+                    style={setActiveStyle('downloads')}
+                  >
+                    <Link tab='TAB_DOWNLOAD' to='/downloads' color='inherit'>
+                      Downloads
+                    </Link>
+                  </Button>
+                </Typography>
+                <Typography sx={theme => styles(theme).button}>
+                  <Button
+                    onClick={handleTabClick}
+                    tab='TAB_ABOUT'
+                    sx={theme => styles(theme).button}
+                    size='large'
+                    color='inherit'
+                    style={setActiveStyle('about')}
+                  >
+                    <Link tab='TAB_DOWNLOAD' to='/about' color='inherit'>
+                      About
+                    </Link>
+                  </Button>
+                </Typography>
+                <Typography sx={theme => styles(theme).contact}>
+                  <Button
+                    onClick={handleTabClick}
+                    tab='TAB_CONTACT'
+                    sx={theme => styles(theme).button}
+                    size='large'
+                    color='inherit'
+                    style={setActiveStyle('contact')}
+                  >
+                    <Link tab='TAB_CONTACT' to='/contact' color='inherit'>
+                      Contact
+                    </Link>
+                  </Button>
+                </Typography>
+                <Button href={data.site.siteMetadata.githubRepo} color='inherit' sx={theme => styles(theme).github}>
+                  <GitHubIcon/>
+                </Button>
+              </Toolbar>
+            </Grid>
           </Grid>
-        </Grid>
-      </AppBar>
-    </MuiThemeProvider>
+        </AppBar>
+      </ThemeProvider>
   );
 }
